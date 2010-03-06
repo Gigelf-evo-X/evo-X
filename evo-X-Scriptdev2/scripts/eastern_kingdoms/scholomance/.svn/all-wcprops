@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/scholomance
+END
+boss_doctor_theolen_krastinov.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/scholomance/boss_doctor_theolen_krastinov.cpp
+END
+boss_vectus.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/scholomance/boss_vectus.cpp
+END
+instance_scholomance.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/scriptdev2/!svn/ver/1537/scripts/eastern_kingdoms/scholomance/instance_scholomance.cpp
+END
+scholomance.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/scriptdev2/!svn/ver/1537/scripts/eastern_kingdoms/scholomance/scholomance.h
+END
+boss_illucia_barov.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/scriptdev2/!svn/ver/1572/scripts/eastern_kingdoms/scholomance/boss_illucia_barov.cpp
+END
+boss_instructor_malicia.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/scriptdev2/!svn/ver/1572/scripts/eastern_kingdoms/scholomance/boss_instructor_malicia.cpp
+END
+boss_death_knight_darkreaver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/scriptdev2/!svn/ver/1537/scripts/eastern_kingdoms/scholomance/boss_death_knight_darkreaver.cpp
+END
+boss_darkmaster_gandling.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/scholomance/boss_darkmaster_gandling.cpp
+END
+boss_lord_alexei_barov.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/scriptdev2/!svn/ver/1572/scripts/eastern_kingdoms/scholomance/boss_lord_alexei_barov.cpp
+END
+boss_kormok.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/scholomance/boss_kormok.cpp
+END
+boss_the_ravenian.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/scriptdev2/!svn/ver/1572/scripts/eastern_kingdoms/scholomance/boss_the_ravenian.cpp
+END
+boss_ras_frostwhisper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/scriptdev2/!svn/ver/1568/scripts/eastern_kingdoms/scholomance/boss_ras_frostwhisper.cpp
+END
+boss_jandice_barov.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/scriptdev2/!svn/ver/1568/scripts/eastern_kingdoms/scholomance/boss_jandice_barov.cpp
+END
+boss_lorekeeper_polkelt.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/scriptdev2/!svn/ver/1572/scripts/eastern_kingdoms/scholomance/boss_lorekeeper_polkelt.cpp
+END

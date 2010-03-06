@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/scriptdev2/!svn/ver/1601/scripts/kalimdor/caverns_of_time/hyjal
+END
+boss_archimonde.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/scriptdev2/!svn/ver/1601/scripts/kalimdor/caverns_of_time/hyjal/boss_archimonde.cpp
+END
+hyjalAI.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/scriptdev2/!svn/ver/1572/scripts/kalimdor/caverns_of_time/hyjal/hyjalAI.cpp
+END
+hyjalAI.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/scriptdev2/!svn/ver/1537/scripts/kalimdor/caverns_of_time/hyjal/hyjalAI.h
+END
+hyjal.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/scriptdev2/!svn/ver/1550/scripts/kalimdor/caverns_of_time/hyjal/hyjal.cpp
+END
+instance_hyjal.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/scriptdev2/!svn/ver/1537/scripts/kalimdor/caverns_of_time/hyjal/instance_hyjal.cpp
+END
+hyjal.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/scriptdev2/!svn/ver/1537/scripts/kalimdor/caverns_of_time/hyjal/hyjal.h
+END

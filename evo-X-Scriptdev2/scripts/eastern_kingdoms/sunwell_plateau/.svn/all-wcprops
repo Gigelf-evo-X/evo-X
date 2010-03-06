@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/sunwell_plateau
+END
+boss_kalecgos.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/sunwell_plateau/boss_kalecgos.cpp
+END
+boss_brutallus.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/scriptdev2/!svn/ver/1585/scripts/eastern_kingdoms/sunwell_plateau/boss_brutallus.cpp
+END
+instance_sunwell_plateau.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/scriptdev2/!svn/ver/1537/scripts/eastern_kingdoms/sunwell_plateau/instance_sunwell_plateau.cpp
+END
+sunwell_plateau.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/scriptdev2/!svn/ver/1537/scripts/eastern_kingdoms/sunwell_plateau/sunwell_plateau.h
+END

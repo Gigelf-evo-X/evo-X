@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svnroot/scriptdev2/!svn/ver/1615/scripts/world
+END
+boss_lethon.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/scriptdev2/!svn/ver/1537/scripts/world/boss_lethon.cpp
+END
+areatrigger_scripts.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/scriptdev2/!svn/ver/1608/scripts/world/areatrigger_scripts.cpp
+END
+mob_generic_creature.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/scriptdev2/!svn/ver/1601/scripts/world/mob_generic_creature.cpp
+END
+npcs_special.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/scriptdev2/!svn/ver/1588/scripts/world/npcs_special.cpp
+END
+boss_taerar.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/scriptdev2/!svn/ver/1601/scripts/world/boss_taerar.cpp
+END
+guards.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/scriptdev2/!svn/ver/1574/scripts/world/guards.cpp
+END
+item_scripts.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/scriptdev2/!svn/ver/1549/scripts/world/item_scripts.cpp
+END
+spell_scripts.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/scriptdev2/!svn/ver/1615/scripts/world/spell_scripts.cpp
+END
+boss_ysondre.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/scriptdev2/!svn/ver/1601/scripts/world/boss_ysondre.cpp
+END
+npc_professions.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/scriptdev2/!svn/ver/1573/scripts/world/npc_professions.cpp
+END
+go_scripts.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/scriptdev2/!svn/ver/1572/scripts/world/go_scripts.cpp
+END
+boss_emeriss.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/scriptdev2/!svn/ver/1601/scripts/world/boss_emeriss.cpp
+END

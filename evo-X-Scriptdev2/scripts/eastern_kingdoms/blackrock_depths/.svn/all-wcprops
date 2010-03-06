@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/blackrock_depths
+END
+boss_ambassador_flamelash.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/scriptdev2/!svn/ver/1568/scripts/eastern_kingdoms/blackrock_depths/boss_ambassador_flamelash.cpp
+END
+boss_high_interrogator_gerstahn.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/scriptdev2/!svn/ver/1576/scripts/eastern_kingdoms/blackrock_depths/boss_high_interrogator_gerstahn.cpp
+END
+boss_magmus.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/blackrock_depths/boss_magmus.cpp
+END
+blackrock_depths.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/blackrock_depths/blackrock_depths.cpp
+END
+boss_general_angerforge.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/blackrock_depths/boss_general_angerforge.cpp
+END
+instance_blackrock_depths.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/scriptdev2/!svn/ver/1537/scripts/eastern_kingdoms/blackrock_depths/instance_blackrock_depths.cpp
+END
+blackrock_depths.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/scriptdev2/!svn/ver/1537/scripts/eastern_kingdoms/blackrock_depths/blackrock_depths.h
+END
+boss_anubshiah.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/scriptdev2/!svn/ver/1568/scripts/eastern_kingdoms/blackrock_depths/boss_anubshiah.cpp
+END
+boss_gorosh_the_dervish.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/scriptdev2/!svn/ver/1568/scripts/eastern_kingdoms/blackrock_depths/boss_gorosh_the_dervish.cpp
+END
+boss_tomb_of_seven.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/blackrock_depths/boss_tomb_of_seven.cpp
+END
+boss_emperor_dagran_thaurissan.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/blackrock_depths/boss_emperor_dagran_thaurissan.cpp
+END
+boss_grizzle.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/blackrock_depths/boss_grizzle.cpp
+END

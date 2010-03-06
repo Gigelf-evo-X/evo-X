@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/molten_core
+END
+boss_gehennas.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/scriptdev2/!svn/ver/1568/scripts/eastern_kingdoms/molten_core/boss_gehennas.cpp
+END
+boss_magmadar.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/scriptdev2/!svn/ver/1568/scripts/eastern_kingdoms/molten_core/boss_magmadar.cpp
+END
+boss_shazzrah.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/scriptdev2/!svn/ver/1579/scripts/eastern_kingdoms/molten_core/boss_shazzrah.cpp
+END
+boss_garr.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/molten_core/boss_garr.cpp
+END
+boss_majordomo_executus.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/molten_core/boss_majordomo_executus.cpp
+END
+boss_ragnaros.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/scriptdev2/!svn/ver/1568/scripts/eastern_kingdoms/molten_core/boss_ragnaros.cpp
+END
+boss_sulfuron_harbinger.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/scriptdev2/!svn/ver/1568/scripts/eastern_kingdoms/molten_core/boss_sulfuron_harbinger.cpp
+END
+molten_core.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/scriptdev2/!svn/ver/1537/scripts/eastern_kingdoms/molten_core/molten_core.cpp
+END
+boss_baron_geddon.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/molten_core/boss_baron_geddon.cpp
+END
+boss_lucifron.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/scriptdev2/!svn/ver/1568/scripts/eastern_kingdoms/molten_core/boss_lucifron.cpp
+END
+boss_golemagg.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/molten_core/boss_golemagg.cpp
+END
+instance_molten_core.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/scriptdev2/!svn/ver/1537/scripts/eastern_kingdoms/molten_core/instance_molten_core.cpp
+END
+molten_core.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/scriptdev2/!svn/ver/1537/scripts/eastern_kingdoms/molten_core/molten_core.h
+END

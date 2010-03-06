@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/blackwing_lair
+END
+boss_broodlord_lashlayer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/scriptdev2/!svn/ver/1568/scripts/eastern_kingdoms/blackwing_lair/boss_broodlord_lashlayer.cpp
+END
+boss_firemaw.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/scriptdev2/!svn/ver/1568/scripts/eastern_kingdoms/blackwing_lair/boss_firemaw.cpp
+END
+boss_razorgore.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/scriptdev2/!svn/ver/1585/scripts/eastern_kingdoms/blackwing_lair/boss_razorgore.cpp
+END
+boss_flamegor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/scriptdev2/!svn/ver/1584/scripts/eastern_kingdoms/blackwing_lair/boss_flamegor.cpp
+END
+boss_chromaggus.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/blackwing_lair/boss_chromaggus.cpp
+END
+boss_vaelastrasz.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/blackwing_lair/boss_vaelastrasz.cpp
+END
+boss_victor_nefarius.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/scriptdev2/!svn/ver/1579/scripts/eastern_kingdoms/blackwing_lair/boss_victor_nefarius.cpp
+END
+boss_nefarian.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/blackwing_lair/boss_nefarian.cpp
+END
+instance_blackwing_lair.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/scriptdev2/!svn/ver/1537/scripts/eastern_kingdoms/blackwing_lair/instance_blackwing_lair.cpp
+END
+boss_ebonroc.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/scriptdev2/!svn/ver/1585/scripts/eastern_kingdoms/blackwing_lair/boss_ebonroc.cpp
+END

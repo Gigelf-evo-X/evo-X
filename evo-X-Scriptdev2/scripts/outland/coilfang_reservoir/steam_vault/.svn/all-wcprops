@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/scriptdev2/!svn/ver/1601/scripts/outland/coilfang_reservoir/steam_vault
+END
+boss_hydromancer_thespia.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/scriptdev2/!svn/ver/1568/scripts/outland/coilfang_reservoir/steam_vault/boss_hydromancer_thespia.cpp
+END
+boss_warlord_kalithresh.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/scriptdev2/!svn/ver/1568/scripts/outland/coilfang_reservoir/steam_vault/boss_warlord_kalithresh.cpp
+END
+boss_mekgineer_steamrigger.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/scriptdev2/!svn/ver/1601/scripts/outland/coilfang_reservoir/steam_vault/boss_mekgineer_steamrigger.cpp
+END
+instance_steam_vault.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/scriptdev2/!svn/ver/1537/scripts/outland/coilfang_reservoir/steam_vault/instance_steam_vault.cpp
+END
+steam_vault.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/scriptdev2/!svn/ver/1537/scripts/outland/coilfang_reservoir/steam_vault/steam_vault.h
+END

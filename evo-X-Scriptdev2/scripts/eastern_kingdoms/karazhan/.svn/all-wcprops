@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/scriptdev2/!svn/ver/1617/scripts/eastern_kingdoms/karazhan
+END
+boss_shade_of_aran.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/karazhan/boss_shade_of_aran.cpp
+END
+karazhan.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/scriptdev2/!svn/ver/1560/scripts/eastern_kingdoms/karazhan/karazhan.cpp
+END
+boss_netherspite.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/scriptdev2/!svn/ver/1537/scripts/eastern_kingdoms/karazhan/boss_netherspite.cpp
+END
+boss_terestian_illhoof.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/scriptdev2/!svn/ver/1617/scripts/eastern_kingdoms/karazhan/boss_terestian_illhoof.cpp
+END
+instance_karazhan.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/scriptdev2/!svn/ver/1617/scripts/eastern_kingdoms/karazhan/instance_karazhan.cpp
+END
+bosses_opera.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/scriptdev2/!svn/ver/1585/scripts/eastern_kingdoms/karazhan/bosses_opera.cpp
+END
+karazhan.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/scriptdev2/!svn/ver/1617/scripts/eastern_kingdoms/karazhan/karazhan.h
+END
+boss_curator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/karazhan/boss_curator.cpp
+END
+boss_maiden_of_virtue.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/scriptdev2/!svn/ver/1584/scripts/eastern_kingdoms/karazhan/boss_maiden_of_virtue.cpp
+END
+boss_nightbane.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/scriptdev2/!svn/ver/1537/scripts/eastern_kingdoms/karazhan/boss_nightbane.cpp
+END
+boss_midnight.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/karazhan/boss_midnight.cpp
+END
+boss_moroes.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/scriptdev2/!svn/ver/1613/scripts/eastern_kingdoms/karazhan/boss_moroes.cpp
+END
+boss_prince_malchezaar.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/karazhan/boss_prince_malchezaar.cpp
+END

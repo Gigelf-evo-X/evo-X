@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/zulaman
+END
+boss_zuljin.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/scriptdev2/!svn/ver/1572/scripts/eastern_kingdoms/zulaman/boss_zuljin.cpp
+END
+boss_janalai.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/zulaman/boss_janalai.cpp
+END
+zulaman.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/scriptdev2/!svn/ver/1568/scripts/eastern_kingdoms/zulaman/zulaman.cpp
+END
+boss_halazzi.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/zulaman/boss_halazzi.cpp
+END
+boss_nalorakk.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/scriptdev2/!svn/ver/1585/scripts/eastern_kingdoms/zulaman/boss_nalorakk.cpp
+END
+instance_zulaman.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/scriptdev2/!svn/ver/1537/scripts/eastern_kingdoms/zulaman/instance_zulaman.cpp
+END
+boss_malacrass.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/scriptdev2/!svn/ver/1572/scripts/eastern_kingdoms/zulaman/boss_malacrass.cpp
+END
+zulaman.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/scriptdev2/!svn/ver/1537/scripts/eastern_kingdoms/zulaman/zulaman.h
+END
+boss_akilzon.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/scriptdev2/!svn/ver/1570/scripts/eastern_kingdoms/zulaman/boss_akilzon.cpp
+END

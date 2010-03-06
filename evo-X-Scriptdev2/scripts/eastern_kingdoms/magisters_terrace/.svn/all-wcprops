@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/magisters_terrace
+END
+magisters_terrace.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/scriptdev2/!svn/ver/1572/scripts/eastern_kingdoms/magisters_terrace/magisters_terrace.cpp
+END
+instance_magisters_terrace.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/scriptdev2/!svn/ver/1537/scripts/eastern_kingdoms/magisters_terrace/instance_magisters_terrace.cpp
+END
+boss_felblood_kaelthas.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/magisters_terrace/boss_felblood_kaelthas.cpp
+END
+magisters_terrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/scriptdev2/!svn/ver/1537/scripts/eastern_kingdoms/magisters_terrace/magisters_terrace.h
+END
+boss_selin_fireheart.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/scriptdev2/!svn/ver/1570/scripts/eastern_kingdoms/magisters_terrace/boss_selin_fireheart.cpp
+END
+boss_vexallus.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/magisters_terrace/boss_vexallus.cpp
+END
+boss_priestess_delrissa.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/scriptdev2/!svn/ver/1601/scripts/eastern_kingdoms/magisters_terrace/boss_priestess_delrissa.cpp
+END

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/scriptdev2/!svn/ver/1601/scripts/northrend/nexus/nexus
+END
+boss_ormorok.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/scriptdev2/!svn/ver/1601/scripts/northrend/nexus/nexus/boss_ormorok.cpp
+END
+boss_anomalus.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/scriptdev2/!svn/ver/1601/scripts/northrend/nexus/nexus/boss_anomalus.cpp
+END
+instance_nexus.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/scriptdev2/!svn/ver/1537/scripts/northrend/nexus/nexus/instance_nexus.cpp
+END
+nexus.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/scriptdev2/!svn/ver/1537/scripts/northrend/nexus/nexus/nexus.h
+END
+boss_keristrasza.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/scriptdev2/!svn/ver/1601/scripts/northrend/nexus/nexus/boss_keristrasza.cpp
+END
+boss_telestra.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/scriptdev2/!svn/ver/1601/scripts/northrend/nexus/nexus/boss_telestra.cpp
+END

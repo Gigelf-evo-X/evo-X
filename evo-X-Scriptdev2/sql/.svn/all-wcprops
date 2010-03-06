@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svnroot/scriptdev2/!svn/ver/1632/sql
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svnroot/scriptdev2/!svn/ver/1203/sql/Makefile.am
+END
+mangos_scriptname_full.sql
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/scriptdev2/!svn/ver/1632/sql/mangos_scriptname_full.sql
+END
+scriptdev2_script_full.sql
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/scriptdev2/!svn/ver/1629/sql/scriptdev2_script_full.sql
+END
+scriptdev2_create_database.sql
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/scriptdev2/!svn/ver/1002/sql/scriptdev2_create_database.sql
+END
+scriptdev2_create_structure_mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/scriptdev2/!svn/ver/1015/sql/scriptdev2_create_structure_mysql.sql
+END
+scriptdev2_create_structure_pgsql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/scriptdev2/!svn/ver/1015/sql/scriptdev2_create_structure_pgsql.sql
+END

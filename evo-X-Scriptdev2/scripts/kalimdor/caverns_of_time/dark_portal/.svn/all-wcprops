@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/scriptdev2/!svn/ver/1585/scripts/kalimdor/caverns_of_time/dark_portal
+END
+boss_aeonus.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/scriptdev2/!svn/ver/1568/scripts/kalimdor/caverns_of_time/dark_portal/boss_aeonus.cpp
+END
+boss_chrono_lord_deja.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/scriptdev2/!svn/ver/1571/scripts/kalimdor/caverns_of_time/dark_portal/boss_chrono_lord_deja.cpp
+END
+dark_portal.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/scriptdev2/!svn/ver/1585/scripts/kalimdor/caverns_of_time/dark_portal/dark_portal.cpp
+END
+boss_temporus.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/scriptdev2/!svn/ver/1568/scripts/kalimdor/caverns_of_time/dark_portal/boss_temporus.cpp
+END
+instance_dark_portal.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/scriptdev2/!svn/ver/1572/scripts/kalimdor/caverns_of_time/dark_portal/instance_dark_portal.cpp
+END
+dark_portal.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/scriptdev2/!svn/ver/1537/scripts/kalimdor/caverns_of_time/dark_portal/dark_portal.h
+END
