@@ -670,7 +670,7 @@ void Vehicle::InstallAllAccessories()
     switch(GetEntry())
     {
         //case 27850:InstallAccessory(27905,1);break;
-        case 28782:InstallAccessory(28768,0,false, false);break; // Acherus Deathcharger
+        case 28782:InstallAccessory(28768,1,true);break; // Acherus Deathcharger
         case 28312:InstallAccessory(28319,7,true);break;
         case 32627:InstallAccessory(32629,7,true);break;
         case 32930:
