@@ -6507,8 +6507,8 @@ void ObjectMgr::LoadQuestPOI()
 
     uint32 count = 0;
 
-    //                                                0        1         2      3     4     5     6
-    QueryResult *result = WorldDatabase.Query("SELECT questId, objIndex, mapId, unk1, unk2, unk3, unk4 FROM quest_poi");
+    //                                                0        1       2         3      4       5        6      7
+    QueryResult *result = WorldDatabase.Query("SELECT questId, poiId, objIndex, mapId, areaId, floorId, unk3, unk4 FROM quest_poi");
 
     if(!result)
     {
@@ -6529,16 +6529,17 @@ void ObjectMgr::LoadQuestPOI()
         bar.step();
 
         uint32 questId  = fields[0].GetUInt32();
-        int32 objIndex  = fields[1].GetInt32();
-        uint32 mapId    = fields[2].GetUInt32();
-        uint32 unk1     = fields[3].GetUInt32();
-        uint32 unk2     = fields[4].GetUInt32();
-        uint32 unk3     = fields[5].GetUInt32();
-        uint32 unk4     = fields[6].GetUInt32();
+        uint32 poiId    = fields[1].GetUInt32();
+        int32 objIndex  = fields[2].GetInt32();
+        uint32 mapId    = fields[3].GetUInt32();
+        uint32 areaId   = fields[4].GetUInt32();
+        uint32 floorId  = fields[5].GetUInt32();
+        uint32 unk3     = fields[6].GetUInt32();
+        uint32 unk4     = fields[7].GetUInt32();
 
-        QuestPOI POI(objIndex, mapId, unk1, unk2, unk3, unk4);
+        QuestPOI POI(poiId, objIndex, mapId, areaId, floorId, unk3, unk4);
 
-        QueryResult *points = WorldDatabase.PQuery("SELECT x, y FROM quest_poi_points WHERE questId='%u' AND objIndex='%i'", questId, objIndex);
+        QueryResult *points = WorldDatabase.PQuery("SELECT x, y FROM quest_poi_points WHERE questId='%u' AND poiId='%i'", questId, poiId);
 
         if(points)
         {
