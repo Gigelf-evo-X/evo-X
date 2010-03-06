@@ -926,11 +926,36 @@ Map::CreatureRelocation(Creature *creature, float x, float y, float z, float ang
                 creature->SetNeedNotify();
             }
         }
+        // hack for eye of acherus part 1
+        if(creature->isCharmed())
+        {
+            NGridType* oldGrid = getNGrid(old_cell.GridX(), old_cell.GridY());
+            RemoveFromGrid(creature->GetCharmerOrOwnerPlayerOrPlayerItself(), oldGrid, old_cell);
+            if(!old_cell.DiffGrid(new_cell))
+                AddToGrid(creature->GetCharmerOrOwnerPlayerOrPlayerItself(), oldGrid, new_cell);
+            else
+                EnsureGridLoadedAtEnter(new_cell, creature->GetCharmerOrOwnerPlayerOrPlayerItself());
+        }
     }
     else
     {
         creature->Relocate(x, y, z, ang);
         creature->SetNeedNotify();
+        // hack for eye of acherus part 2
+        if(creature->isCharmed())
+        {
+            UpdatePlayerVisibility(creature->GetCharmerOrOwnerPlayerOrPlayerItself(), new_cell, new_val);
+            UpdateObjectsVisibilityFor(creature->GetCharmerOrOwnerPlayerOrPlayerItself(), new_cell, new_val);
+            PlayerRelocationNotify(creature->GetCharmerOrOwnerPlayerOrPlayerItself(), new_cell, new_val);
+
+            bool same_cell = (new_cell == old_cell);
+            NGridType* newGrid = getNGrid(new_cell.GridX(), new_cell.GridY());
+            if( !same_cell && newGrid->GetGridState()!= GRID_STATE_ACTIVE )
+            {
+            ResetGridExpiry(*newGrid, 0.1f);
+            newGrid->SetGridState(GRID_STATE_ACTIVE);
+            }
+        }
     }
 
     assert(CheckGridIntegrity(creature,true));

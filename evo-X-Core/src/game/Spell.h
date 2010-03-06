@@ -217,6 +217,7 @@ class Spell
     friend void Unit::SetCurrentCastedSpell( Spell * pSpell );
     public:
 
+		void EffectSummonPosessed(SpellEffectIndex eff_idx);
         void EffectEmpty(SpellEffectIndex eff_idx);
         void EffectNULL(SpellEffectIndex eff_idx);
         void EffectUnused(SpellEffectIndex eff_idx);
