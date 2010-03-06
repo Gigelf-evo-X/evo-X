@@ -1249,7 +1249,10 @@ void Aura::SendAuraUpdate(bool remove)
 
     if(!(auraFlags & AFLAG_NOT_CASTER))
     {
-        data << uint8(0);                                   // pguid
+        if(GetCaster())
+            data.append(GetCaster()->GetPackGUID());
+        else
+            data << uint8(0);
     }
 
     if(auraFlags & AFLAG_DURATION)
@@ -3627,7 +3630,7 @@ void Aura::HandleModPossess(bool apply, bool Real)
             m_target->GetMotionMaster()->Clear();
             m_target->GetMotionMaster()->MoveIdle();
         }
-        else if(m_target->GetTypeId() == TYPEID_PLAYER)
+        else if(m_target->GetTypeId() == TYPEID_PLAYER && !m_target->GetVehicleGUID())
         {
             ((Player*)m_target)->SetClientControl(m_target, 0);
         }
@@ -3644,7 +3647,7 @@ void Aura::HandleModPossess(bool apply, bool Real)
         m_target->SetCharmerGUID(0);
         p_caster->InterruptSpell(CURRENT_CHANNELED_SPELL);  // the spell is not automatically canceled when interrupted, do it now
 
-        if(m_target->GetTypeId() == TYPEID_PLAYER)
+        if(m_target->GetTypeId() == TYPEID_PLAYER && !m_target->GetVehicleGUID())
         {
             ((Player*)m_target)->setFactionForRace(m_target->getRace());
             ((Player*)m_target)->SetClientControl(m_target, 1);
@@ -3913,10 +3916,13 @@ void Aura::HandleAuraModStun(bool apply, bool Real)
             m_target->SetStandState(UNIT_STAND_STATE_STAND);// in 1.5 client
         }
 
-        WorldPacket data(SMSG_FORCE_MOVE_ROOT, 8);
-        data.append(m_target->GetPackGUID());
-        data << uint32(0);
-        m_target->SendMessageToSet(&data, true);
+        if(!m_target->hasUnitState(UNIT_STAT_ON_VEHICLE))
+        {
+            WorldPacket data(SMSG_FORCE_MOVE_ROOT, 8);
+            data.append(m_target->GetPackGUID());
+            data << uint32(0);
+            m_target->SendMessageToSet(&data,true);
+        }
 
         // Summon the Naj'entus Spine GameObject on target if spell is Impaling Spine
         if(GetId() == 39837)
@@ -3966,7 +3972,7 @@ void Aura::HandleAuraModStun(bool apply, bool Real)
         m_target->clearUnitState(UNIT_STAT_STUNNED);
         m_target->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_STUNNED);
 
-        if(!m_target->hasUnitState(UNIT_STAT_ROOT))         // prevent allow move if have also root effect
+        if(!m_target->hasUnitState(UNIT_STAT_ROOT | UNIT_STAT_ON_VEHICLE))         // prevent allow move if have also root effect
         {
             if(m_target->getVictim() && m_target->isAlive())
                 m_target->SetTargetGUID(m_target->getVictim()->GetGUID());
@@ -4181,11 +4187,13 @@ void Aura::HandleAuraModRoot(bool apply, bool Real)
 
         if(m_target->GetTypeId() == TYPEID_PLAYER)
         {
-            WorldPacket data(SMSG_FORCE_MOVE_ROOT, 10);
-            data.append(m_target->GetPackGUID());
-            data << (uint32)2;
-            m_target->SendMessageToSet(&data, true);
-
+            if(!m_target->hasUnitState(UNIT_STAT_ON_VEHICLE))
+            {
+                WorldPacket data(SMSG_FORCE_MOVE_ROOT, 10);
+                data.append(m_target->GetPackGUID());
+                data << (uint32)2;
+                m_target->SendMessageToSet(&data,true);
+            }
             //Clear unit movement flags
             ((Player*)m_target)->m_movementInfo.SetMovementFlags(MOVEFLAG_NONE);
         }
@@ -4223,7 +4231,7 @@ void Aura::HandleAuraModRoot(bool apply, bool Real)
 
         m_target->clearUnitState(UNIT_STAT_ROOT);
 
-        if(!m_target->hasUnitState(UNIT_STAT_STUNNED))      // prevent allow move if have also stun effect
+        if(!m_target->hasUnitState(UNIT_STAT_STUNNED | UNIT_STAT_ON_VEHICLE))      // prevent allow move if have also stun effect
         {
             if(m_target->getVictim() && m_target->isAlive())
                 m_target->SetTargetGUID(m_target->getVictim()->GetGUID());
@@ -4254,7 +4262,7 @@ void Aura::HandleAuraModSilence(bool apply, bool Real)
                 if(spell->m_spellInfo->PreventionType == SPELL_PREVENTION_TYPE_SILENCE)
                     // Stop spells on prepare or casting state
                     m_target->InterruptSpell(CurrentSpellTypes(i), false);
-    }
+	}
     else
     {
         // Real remove called after current aura remove from lists, check if other similar auras active
@@ -6684,7 +6692,7 @@ void Aura::HandleModRatingFromStat(bool apply, bool Real)
 
 void Aura::HandleForceMoveForward(bool apply, bool Real)
 {
-    if(!Real || m_target->GetTypeId() != TYPEID_PLAYER)
+    if(!Real)
         return;
     if(apply)
         m_target->SetFlag(UNIT_FIELD_FLAGS_2, UNIT_FLAG2_FORCE_MOVE);
@@ -8039,28 +8047,36 @@ void Aura::HandleArenaPreparation(bool apply, bool Real)
  */
 void Aura::HandleAuraControlVehicle(bool apply, bool Real)
 {
-    if(!Real)
+     if(!Real)
+         return;
+
+    Unit *caster = GetCaster();
+    Vehicle *vehicle = dynamic_cast<Vehicle*>(m_target);
+    if(!caster || !vehicle)
         return;
 
-    Unit *player = GetCaster();
-    Vehicle *vehicle = dynamic_cast<Vehicle*>(m_target);
-    if(!player || player->GetTypeId() != TYPEID_PLAYER || !vehicle)
+    // this can happen due to wrong caster/target spell handling
+    // note : SPELL_AURA_CONTROL_VEHICLE can have EffectImplicitTargetA
+    // TARGET_SCRIPT, TARGET_DUELVSPLAYER.. etc
+    if(caster->GetGUID() == vehicle->GetGUID())
         return;
 
     if (apply)
     {
-        if(Pet *pet = player->GetPet())
-            pet->Remove(PET_SAVE_AS_CURRENT);
-        ((Player*)player)->EnterVehicle(vehicle);
+        if(caster->GetTypeId() == TYPEID_PLAYER)
+        {
+            WorldPacket data(SMSG_ON_CANCEL_EXPECTED_RIDE_VEHICLE_AURA, 0);
+            ((Player*)caster)->GetSession()->SendPacket(&data);
+        }
+        // if we leave and enter again, this will refresh
+        int32 duration = GetSpellMaxDuration(GetSpellProto());
+        if(duration > 0)
+            vehicle->SetSpawnDuration(duration);
     }
     else
     {
-        SpellEntry const *spell = GetSpellProto();
-
         // some SPELL_AURA_CONTROL_VEHICLE auras have a dummy effect on the player - remove them
-        player->RemoveAurasDueToSpell(spell->Id);
-
-        ((Player*)player)->ExitVehicle(vehicle);
+        caster->RemoveAurasDueToSpell(GetId());
     }
 }
 
