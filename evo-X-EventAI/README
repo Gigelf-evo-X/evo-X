@@ -1,0 +1,57 @@
+= evo-X-Project -- README =
+
+Copyright (C) 2009-2010 evo-X-Project <http://evo-X-Project.com/>
+
+  evo-X-Project is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+  In addition, as a special exception, the evo-X-Project project
+  gives permission to link the code of its release of evo-X-Project with the
+  OpenSSL project's "OpenSSL" library (or with modified versions of it
+  that use the same license as the "OpenSSL" library), and distribute
+  the linked executables.  You must obey the GNU General Public License
+  in all respects for all of the code used other than "OpenSSL".  If you
+  modify this file, you may extend this exception to your version of the
+  file, but you are not obligated to do so.  If you do not wish to do
+  so, delete this exception statement from your version.
+
+Comments are welcome.
+
+	- Salja <beleko2009@web.de>
+
+== Welcome to evo-X-Project ==
+
+evo-X-Project is an Open Source reference
+implementation for a MMORPG server system. Please see the file COPYING for
+license details.
+
+For further information on the evo-X-Project project, please visit our project web
+site at <http://evo-X-Project.com/>
+
+Documentation on various development related topics can be found in the doc/
+subdirectory, including Doxygen-generated API documentation.
+
+The required SQL files for creating the database backend are included in the
+sql/ subdirectory. In case you are upgrading from an older evo-X-Project release,
+make sure you as well take a look at the SQL files in the sql/updates/ sub-
+directory.
+
+In order to build and install evo-X-Project under Linux, follow the instructions
+described in the INSTALL file.
+
+In case you have checked out evo-X-Project from the GIT repository, please run
+
+$ autoreconf --install --force
+
+prior to building, as you may otherwise not be able to run a build.
