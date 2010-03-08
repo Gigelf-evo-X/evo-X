@@ -186,17 +186,17 @@ struct MANGOS_DLL_DECL mob_tribuna_controllerAI : public ScriptedAI
             uint32 uiPositionCounter = 0;
             for(std::list<Creature*>::iterator itr = m_lKaddrakGUIDList.begin(); itr != m_lKaddrakGUIDList.end(); ++itr)
             {
-                if ((*itr)->isAlive())
+                if ((*itr) && (*itr)->isAlive())
                 {
                     if (uiPositionCounter == 0)
                     {
                         (*itr)->GetMap()->CreatureRelocation((*itr), 927.265f, 333.200f, 218.780f, (*itr)->GetOrientation());
-                        (*itr)->MonsterMove(927.265f, 333.200f, 218.780f, 1);
+                        (*itr)->SendMonsterMove(927.265f, 333.200f, 218.780f, SPLINETYPE_NORMAL, (*itr)->GetSplineFlags(), 1);
                     }
                     else
                     {
                         (*itr)->GetMap()->CreatureRelocation((*itr), 921.745f, 328.076f, 218.780f, (*itr)->GetOrientation());
-                        (*itr)->MonsterMove(921.745f, 328.076f, 218.780f, 1);
+                        (*itr)->SendMonsterMove(921.745f, 328.076f, 218.780f, SPLINETYPE_NORMAL, (*itr)->GetSplineFlags(), 1);
                     }
                 }
                 ++uiPositionCounter;
@@ -576,57 +576,57 @@ struct MANGOS_DLL_DECL npc_brann_hosAI : public npc_escortAI
                         pTemp->DealDamage(pTemp, pTemp->GetHealth(), NULL, DIRECT_DAMAGE, SPELL_SCHOOL_MASK_NORMAL, NULL, false);
                     m_bIsBattle = true;
                     SetEscortPaused(false);
-                    JumpToNextStep(3500);
+                    JumpToNextStep(6500);
                     break;
                 case 29:
                     DoScriptText(SAY_EVENT_END_02, m_creature);
-                    JumpToNextStep(3500);
+                    JumpToNextStep(5500);
                     break;
                 case 30:
                     if (m_pInstance)
                         if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), m_pInstance->GetData64(DATA_ABEDNEUM))))
                             DoScriptText(SAY_EVENT_END_03_ABED, pTemp);
-                    JumpToNextStep(4500);
+                    JumpToNextStep(8500);
                     break;
                 case 31:
                     DoScriptText(SAY_EVENT_END_04, m_creature);
-                    JumpToNextStep(6500);
+                    JumpToNextStep(11500);
                     break;
                 case 32:
                     if (m_pInstance)
                         if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), m_pInstance->GetData64(DATA_ABEDNEUM))))
                             DoScriptText(SAY_EVENT_END_05_ABED, pTemp);
-                    JumpToNextStep(6500);
+                    JumpToNextStep(11500);
                     break;
                 case 33:
                     DoScriptText(SAY_EVENT_END_06, m_creature);
-                    JumpToNextStep(2500);
+                    JumpToNextStep(4500);
                     break;
                 case 34:
                     if (m_pInstance)
                         if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), m_pInstance->GetData64(DATA_ABEDNEUM))))
                             DoScriptText(SAY_EVENT_END_07_ABED, pTemp);
-                    JumpToNextStep(10500);
+                    JumpToNextStep(22500);
                     break;
                 case 35:
                     DoScriptText(SAY_EVENT_END_08, m_creature);
-                    JumpToNextStep(4500);
+                    JumpToNextStep(7500);
                     break;
                 case 36:
                     if (m_pInstance)
                         if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), m_pInstance->GetData64(DATA_KADDRAK))))
                             DoScriptText(SAY_EVENT_END_09_KADD, pTemp);
-                    JumpToNextStep(7500);
+                    JumpToNextStep(18500);
                     break;
                 case 37:
                     DoScriptText(SAY_EVENT_END_10, m_creature);
-                    JumpToNextStep(2500);
+                    JumpToNextStep(5500);
                     break;
                 case 38:
                     if (m_pInstance)
                         if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), m_pInstance->GetData64(DATA_KADDRAK))))
                             DoScriptText(SAY_EVENT_END_11_KADD, pTemp);
-                    JumpToNextStep(10500);
+                    JumpToNextStep(20500);
                     break;
                 case 39:
                     DoScriptText(SAY_EVENT_END_12, m_creature);
@@ -636,47 +636,47 @@ struct MANGOS_DLL_DECL npc_brann_hosAI : public npc_escortAI
                     if (m_pInstance)
                         if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), m_pInstance->GetData64(DATA_KADDRAK))))
                             DoScriptText(SAY_EVENT_END_13_KADD, pTemp);
-                    JumpToNextStep(9500);
+                    JumpToNextStep(19500);
                     break;
                 case 41:
                     DoScriptText(SAY_EVENT_END_14, m_creature);
-                    JumpToNextStep(5500);
+                    JumpToNextStep(10500);
                     break;
                 case 42:
                     if (m_pInstance)
                         if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), m_pInstance->GetData64(DATA_MARNAK))))
                             DoScriptText(SAY_EVENT_END_15_MARN, pTemp);
-                    JumpToNextStep(3500);
+                    JumpToNextStep(6500);
                     break;
                 case 43:
                     DoScriptText(SAY_EVENT_END_16, m_creature);
-                    JumpToNextStep(3500);
+                    JumpToNextStep(6500);
                     break;
                 case 44:
                     if (m_pInstance)
                         if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), m_pInstance->GetData64(DATA_MARNAK))))
                             DoScriptText(SAY_EVENT_END_17_MARN, pTemp);
-                    JumpToNextStep(11500);
+                    JumpToNextStep(25500);
                     break;
                 case 45:
                     DoScriptText(SAY_EVENT_END_18, m_creature);
-                    JumpToNextStep(10500);
+                    JumpToNextStep(23500);
                     break;
                 case 46:
                     if (m_pInstance)
                         if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), m_pInstance->GetData64(DATA_MARNAK))))
                             DoScriptText(SAY_EVENT_END_19_MARN, pTemp);
-                    JumpToNextStep(2500);
+                    JumpToNextStep(3500);
                     break;
                 case 47:
                     DoScriptText(SAY_EVENT_END_20, m_creature);
-                    JumpToNextStep(4500);
+                    JumpToNextStep(8500);
                     break;
                 case 48:
                     if (m_pInstance)
                         if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), m_pInstance->GetData64(DATA_ABEDNEUM))))
                             DoScriptText(SAY_EVENT_END_21_ABED, pTemp);
-                    JumpToNextStep(3500);
+                    JumpToNextStep(5500);
                     break;
                 case 49:
                 {
@@ -718,15 +718,10 @@ struct MANGOS_DLL_DECL npc_brann_hosAI : public npc_escortAI
 
 bool GossipHello_npc_brann_hos(Player* pPlayer, Creature* pCreature)
 {
-        ScriptedInstance* m_pInstance;
-        m_pInstance = (ScriptedInstance*)pCreature->GetInstanceData();
-
     if (pCreature->isQuestGiver())
         pPlayer->PrepareQuestMenu(pCreature->GetGUID());
 
-if (m_pInstance->GetData(TYPE_BRANN) != DONE)
     pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, GOSSIP_ITEM_START, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF+1);
-
     pPlayer->SEND_GOSSIP_MENU(TEXT_ID_START, pCreature->GetGUID());
 
     //pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, GOSSIP_ITEM_PROGRESS, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF+2);

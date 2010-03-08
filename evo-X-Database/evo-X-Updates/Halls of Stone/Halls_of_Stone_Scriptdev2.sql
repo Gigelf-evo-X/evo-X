@@ -1,11 +1,7 @@
-INSERT IGNORE INTO `script_texts` 
-(`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`, `sound`, `type`, `language`, `emote`, `comment`) 
-VALUES 
-('-1712001', 'Soft meat! Come to me!', 'Soft meat! Come to me!', NULL, NULL, NULL, NULL, NULL, NULL, '?????? ??????! ????????!', '0', '0', '0', '0', NULL),
-('-1712002', 'Get it!', 'Get it!', NULL, NULL, NULL, NULL, NULL, NULL, '???? ??????!', '0', '0', '0', '0', NULL),
-('-1712003', 'Into the ice!', 'Into the ice!', NULL, NULL, NULL, NULL, NULL, NULL, '???? ????????!', '0', '0', '0', '0', NULL),
-('-1712004', 'Stone curse!', 'Stone curse!', NULL, NULL, NULL, NULL, NULL, NULL, '????????!', '0', '0', '0', '0', NULL),
-('-1712005', 'Gr-r-r-r!', 'Gr-r-r-r!', NULL, NULL, NULL, NULL, NULL, NULL, '??, ??? ? ???!', '0', '0', '0', '0', NULL),
-('-1712006', 'It is cool!', 'It is cool!', NULL, NULL, NULL, NULL, NULL, NULL, '???, ?????', '0', '0', '0', '0', NULL),
-('-1712007', 'O, no...', 'O, no...', NULL, NULL, NULL, NULL, NULL, NULL, '?? ????? ????...', '0', '0', '0', '0', NULL),
-('-1712008', 'Enrage!', 'Enrage!', NULL, NULL, NULL, NULL, NULL, NULL, '?? ???, ?? ???? ???????...', '0', '0', '0', '0', NULL);
+-- -1 599 000 HALLS OF STONE
+INSERT INTO `script_texts` (`entry`,`content_default`,`sound`,`type`,`language`,`comment`) VALUES
+-- Krystallus
+   (-1599065, 'Crush....', 14176, 1,0,'krystallus SAY_AGGRO'),
+   (-1599066, 'Ha...ha...ha...ha...', 14177,1,0, 'krystallus SAY_KILL'),
+   (-1599067, 'Uuuuhhhhhhhhhh......', 14179,1,0, 'krystallus SAY_DEATH'),
+   (-1599068, 'Break.... you....', 14178,1,0, 'krystallus SAY_SHATTER');

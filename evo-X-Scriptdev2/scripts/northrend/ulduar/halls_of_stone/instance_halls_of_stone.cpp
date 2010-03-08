@@ -33,14 +33,9 @@ EndScriptData */
 
 struct MANGOS_DLL_DECL instance_halls_of_stone : public ScriptedInstance
 {
-    instance_halls_of_stone(Map* pMap) : ScriptedInstance(pMap) {
-    Regular = pMap->IsRegularDifficulty();
-    Initialize();
-    };
+    instance_halls_of_stone(Map* pMap) : ScriptedInstance(pMap) {Initialize();};
 
     uint32 m_auiEncounter[MAX_ENCOUNTER];
-    bool Regular;
-    std::string strSaveData;
 
     uint64 m_uiKrystallusGUID;
     uint64 m_uiGriefGUID;
@@ -62,24 +57,9 @@ struct MANGOS_DLL_DECL instance_halls_of_stone : public ScriptedInstance
     uint64 m_uiGoAbedneumGUID;
     uint64 m_uiGoMarnakGUID;
 
-    void OpenDoor(uint64 guid)
-    {
-        if(!guid) return;
-        GameObject* pGo = instance->GetGameObject(guid);
-        if(pGo) pGo->SetGoState(GO_STATE_ACTIVE);
-    }
-
-    void CloseDoor(uint64 guid)
-    {
-        if(!guid) return;
-        GameObject* pGo = instance->GetGameObject(guid);
-        if(pGo) pGo->SetGoState(GO_STATE_READY);
-    }
-
     void Initialize()
     {
-        for(uint8 i = 0; i < MAX_ENCOUNTER; ++i)
-                   m_auiEncounter[i]=NOT_STARTED;
+        memset(&m_auiEncounter, 0, sizeof(m_auiEncounter));
 
         m_uiKrystallusGUID       = 0;
         m_uiGriefGUID            = 0;
@@ -136,30 +116,24 @@ struct MANGOS_DLL_DECL instance_halls_of_stone : public ScriptedInstance
         {
             case GO_GRIEF_DOOR:
                 m_uiGriefDoorGUID = pGo->GetGUID();
-                if (m_auiEncounter[0] != DONE)
-                    CloseDoor(m_uiGriefDoorGUID);
-                    else OpenDoor(m_uiGriefDoorGUID);
+                if (m_auiEncounter[0] == DONE)
+                    pGo->SetGoState(GO_STATE_ACTIVE);
                 break;
             case GO_BRANN_DOOR:
                 m_uiBrannDoorGUID = pGo->GetGUID();
-                if (m_auiEncounter[1] != DONE)
-                    CloseDoor(m_uiBrannDoorGUID);
-                    else OpenDoor(m_uiBrannDoorGUID);
+                if (m_auiEncounter[1] == DONE)
+                    pGo->SetGoState(GO_STATE_ACTIVE);
                 break;
             case GO_SJONNIR_DOOR:
                 m_uiSjonnirDoorGUID = pGo->GetGUID();
-                if (m_auiEncounter[2] != DONE)
-                    CloseDoor(m_uiSjonnirDoorGUID);
-                    else OpenDoor(m_uiSjonnirDoorGUID);
+                if (m_auiEncounter[2] == DONE)
+                    pGo->SetGoState(GO_STATE_ACTIVE);
                 break;
             case GO_TRIBUNAL_CONSOLE:
                 m_uiGoTribunalConsoleGUID = pGo->GetGUID();
                 break;
             case GO_TRIBUNAL_CHEST:
-                if (Regular) m_uiGoTribunalChestGUID = pGo->GetGUID();
-                break;
-            case GO_TRIBUNAL_CHEST_H:
-                if (!Regular) m_uiGoTribunalChestGUID = pGo->GetGUID();
+                m_uiGoTribunalChestGUID = pGo->GetGUID();
                 break;
             case GO_TRIBUNAL_SKY_FLOOR:
                 m_uiGoTribunalSkyFloorGUID = pGo->GetGUID();
@@ -176,39 +150,27 @@ struct MANGOS_DLL_DECL instance_halls_of_stone : public ScriptedInstance
         }
     }
 
-    void OnPlayerEnter(Unit* pPlayer)
-    {
-                if (m_auiEncounter[0] != DONE)
-                    CloseDoor(m_uiGriefDoorGUID);
-                    else OpenDoor(m_uiGriefDoorGUID);
-                if (m_auiEncounter[1] != DONE)
-                    CloseDoor(m_uiBrannDoorGUID);
-                    else OpenDoor(m_uiBrannDoorGUID);
-                if (m_auiEncounter[2] != DONE)
-                    CloseDoor(m_uiSjonnirDoorGUID);
-                    else OpenDoor(m_uiSjonnirDoorGUID);
-    }
-
     void SetData(uint32 uiType, uint32 uiData)
     {
         switch(uiType)
         {
             case TYPE_KRYSTALLUS:
                 if (uiData == DONE)
-                OpenDoor(m_uiGriefDoorGUID);
+                    DoUseDoorOrButton(m_uiGriefDoorGUID);
                 m_auiEncounter[0] = uiData;
                 break;
             case TYPE_GRIEF:
                 if (uiData == DONE)
-                OpenDoor(m_uiBrannDoorGUID);
+                    DoUseDoorOrButton(m_uiBrannDoorGUID);
                 m_auiEncounter[1] = uiData;
                 break;
             case TYPE_BRANN:
                 if (uiData == DONE)
                 {
-                    OpenDoor(m_uiSjonnirDoorGUID);
-                    DoRespawnGameObject(m_uiGoTribunalChestGUID);
-                    OpenDoor(m_uiGoTribunalChestGUID);
+                    DoUseDoorOrButton(m_uiSjonnirDoorGUID);
+                    if (GameObject* pChest = instance->GetGameObject(m_uiGoTribunalChestGUID)) // how about heroic
+                        if (pChest && !pChest->isSpawned())
+                            pChest->SetRespawnTime(350000000);
                 }
                 m_auiEncounter[2] = uiData;
                 break;
@@ -216,21 +178,6 @@ struct MANGOS_DLL_DECL instance_halls_of_stone : public ScriptedInstance
                 m_auiEncounter[3] = uiData;
                 break;
         }
-        if (uiData == DONE)
-        {
-            OUT_SAVE_INST_DATA;
-
-            std::ostringstream saveStream;
-
-            for(uint8 i = 0; i < MAX_ENCOUNTER; ++i)
-                saveStream << m_auiEncounter[i] << " ";
-
-            strSaveData = saveStream.str();
-
-            SaveToDB();
-            OUT_SAVE_INST_DATA_COMPLETE;
-        }
-
     }
 
     uint32 GetData(uint32 uiType)
@@ -280,35 +227,6 @@ struct MANGOS_DLL_DECL instance_halls_of_stone : public ScriptedInstance
         }
         return 0;
     }
-
-    const char* Save()
-    {
-        return strSaveData.c_str();
-    }
-
-    void Load(const char* chrIn)
-    {
-        if (!chrIn)
-        {
-            OUT_LOAD_INST_DATA_FAIL;
-            return;
-        }
-
-        OUT_LOAD_INST_DATA(chrIn);
-
-        std::istringstream loadStream(chrIn);
-
-        for(uint8 i = 0; i < MAX_ENCOUNTER; ++i)
-        {
-            loadStream >> m_auiEncounter[i];
-
-            if (m_auiEncounter[i] == IN_PROGRESS)
-                m_auiEncounter[i] = NOT_STARTED;
-        }
-
-        OUT_LOAD_INST_DATA_COMPLETE;
-    }
-
 };
 
 InstanceData* GetInstanceData_instance_halls_of_stone(Map* pMap)

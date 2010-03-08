@@ -39,7 +39,7 @@ enum
     NPC_MARNAK              = 30897, // right
 
     GO_GRIEF_DOOR           = 191292,
-    GO_BRANN_DOOR           = 191293,
+    GO_BRANN_DOOR           = 191295,
     GO_SJONNIR_DOOR         = 191296,
 
     GO_KADDRAK              = 191671, // left
@@ -48,7 +48,6 @@ enum
 
     GO_TRIBUNAL_CONSOLE     = 193907,
     GO_TRIBUNAL_CHEST       = 190586,
-    GO_TRIBUNAL_CHEST_H     = 193996,
     GO_TRIBUNAL_SKY_FLOOR   = 191527,
 };
 
