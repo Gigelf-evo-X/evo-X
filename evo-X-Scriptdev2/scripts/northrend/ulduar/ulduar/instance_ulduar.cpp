@@ -25,10 +25,10 @@ EndScriptData */
 #include "ulduar.h"
 
 //Flame leviathan coordinates to summon - its vehicle 
-#define LEVIATHAN_X  458.518
-#define LEVIATHAN_Y  -11.585
-#define LEVIATHAN_Z  409.803
-#define LEVIATHAN_O  3.136
+#define LEVIATHAN_X  458.518f
+#define LEVIATHAN_Y  -11.585f
+#define LEVIATHAN_Z  409.803f
+#define LEVIATHAN_O  3.136f
 
 struct MANGOS_DLL_DECL instance_ulduar : public ScriptedInstance
 {

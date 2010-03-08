@@ -216,10 +216,10 @@ struct MANGOS_DLL_DECL boss_xt002AI : public ScriptedAI
     {
         m_pInstance = (ScriptedInstance*)pCreature->GetInstanceData();
         m_bIsRegularMode = pCreature->GetMap()->IsRegularDifficulty();
-        XtAddX[0] = 792.706; XtAddY[0] = 64.033; XtAddZ[0] = 413.632;
-        XtAddX[1] = 879.750; XtAddY[1] = 64.815; XtAddZ[1] = 409.804;
-        XtAddX[2] = 896.488; XtAddY[2] = -93.018; XtAddZ[2] = 411.731;
-        XtAddX[3] = 791.016; XtAddY[3] = -83.516; XtAddZ[3] = 409.804;
+        XtAddX[0] = 792.706f; XtAddY[0] = 64.033f; XtAddZ[0] = 413.632f;
+        XtAddX[1] = 879.750f; XtAddY[1] = 64.815f; XtAddZ[1] = 409.804f;
+        XtAddX[2] = 896.488f; XtAddY[2] = -93.018f; XtAddZ[2] = 411.731f;
+        XtAddX[3] = 791.016f; XtAddY[3] = -83.516f; XtAddZ[3] = 409.804f;
         Reset();
     }
 
