@@ -86,7 +86,7 @@ struct MANGOS_DLL_DECL instance_ulduar : public ScriptedInstance
         m_uiSentryGUID2         = 0;
         m_uiSentryGUID3         = 0;
         m_uiSentryGUID4         = 0;
-        m_uiLeviathanGateGUID  = 0;
+        m_uiLeviathanGateGUID   = 0;
 
         memset(&m_auiEncounter, 0, sizeof(m_auiEncounter));
         memset(&m_auiAssemblyGUIDs, 0, sizeof(m_auiAssemblyGUIDs));
