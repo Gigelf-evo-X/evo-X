@@ -78,3 +78,7 @@ void BattleGroundSA::UpdatePlayerScore(Player* Source, uint32 type, uint32 value
 
     BattleGround::UpdatePlayerScore(Source,type,value);
 }
+
+void BattleGroundSA::EventPlayerDamegeGO(Player *player, GameObject* target_obj, uint32 eventId)
+{
+}

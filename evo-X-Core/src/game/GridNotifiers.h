@@ -627,6 +627,24 @@ namespace MaNGOS
             NearestGameObjectFishingHole(NearestGameObjectFishingHole const&);
     };
 
+    class NearestGameObjectCheck
+    {
+        public:
+            NearestGameObjectCheck(WorldObject const& obj) : i_obj(obj), i_range(999) {}
+            bool operator()(GameObject* go)
+            {
+                i_range = i_obj.GetDistance(go);        // use found GO range as new range limit for next check
+                return true;
+            }
+            float GetLastRange() const { return i_range; }
+        private:
+            WorldObject const& i_obj;
+            float i_range;
+
+            // prevent clone this object
+            NearestGameObjectCheck(NearestGameObjectCheck const&);
+    };
+
     // Success at unit in range, range update for next check (this can be use with GameobjectLastSearcher to find nearest GO)
     class NearestGameObjectEntryInObjectRangeCheck
     {
@@ -1027,6 +1045,18 @@ namespace MaNGOS
 
             // prevent clone this object
             NearestCreatureEntryWithLiveStateInObjectRangeCheck(NearestCreatureEntryWithLiveStateInObjectRangeCheck const&);
+    };
+
+    class GameObjectInRangeCheck
+    {
+    public:
+        GameObjectInRangeCheck(float _x, float _y, float _z, float _range) : x(_x), y(_y), z(_z), range(_range) {}
+        bool operator() (GameObject* go)
+        {
+            return go->IsInRange(x, y, z, range);
+        }
+    private:
+        float x, y, z, range;
     };
 
     class AnyPlayerInObjectRangeCheck

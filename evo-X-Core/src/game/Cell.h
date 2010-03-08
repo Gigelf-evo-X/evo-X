@@ -160,8 +160,10 @@ struct MANGOS_DLL_DECL Cell
 
     template<class T, class CONTAINER> void Visit(const CellPair &cellPair, TypeContainerVisitor<T, CONTAINER> &visitor, Map &) const;
     template<class T, class CONTAINER> void Visit(const CellPair &cellPair, TypeContainerVisitor<T, CONTAINER> &visitor, Map &m, const WorldObject &obj, float radius) const;
+    template<class T, class CONTAINER> void Visit(const CellPair &cellPair, TypeContainerVisitor<T, CONTAINER> &visitor, Map &, float radius, float x_off, float y_off) const;
 
     static CellArea CalculateCellArea(const WorldObject &obj, float radius);
+    static CellArea CalculateCellArea(float x, float y, float radius);
 
 private:
     template<class T, class CONTAINER> void VisitCircle(TypeContainerVisitor<T, CONTAINER> &, Map &, const CellPair& , const CellPair& ) const;
