@@ -165,8 +165,6 @@ class SpellCastTargets
         }
 
         bool IsEmpty() const { return m_GOTargetGUID==0 && m_unitTargetGUID==0 && m_itemTarget==0 && m_CorpseTargetGUID==0; }
-        bool HasSrc() const { return m_targetMask & TARGET_FLAG_SOURCE_LOCATION; }
-        bool HasDst() const { return m_targetMask & TARGET_FLAG_DEST_LOCATION; }
 
         void Update(Unit* caster);
 
@@ -326,8 +324,6 @@ class Spell
         void EffectKillCreditPersonal(SpellEffectIndex eff_idx);
         void EffectKillCredit(SpellEffectIndex eff_idx);
         void EffectQuestFail(SpellEffectIndex eff_idx);
-        void EffectWMODamage(SpellEffectIndex eff_idx);
-        void EffectWMORepair(SpellEffectIndex eff_idx);
         void EffectActivateRune(SpellEffectIndex eff_idx);
         void EffectTeachTaxiNode(SpellEffectIndex eff_idx);
         void EffectTitanGrip(SpellEffectIndex eff_idx);
