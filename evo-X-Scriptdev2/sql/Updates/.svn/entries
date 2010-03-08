@@ -1,14 +1,14 @@
 10
 
 dir
-1636
+1637
 https://scriptdev2.svn.sourceforge.net/svnroot/scriptdev2/sql/Updates
 https://scriptdev2.svn.sourceforge.net/svnroot/scriptdev2
 
 
 
-2010-03-07T21:17:07.567804Z
-1636
+2010-03-08T10:09:58.263542Z
+1637
 nofantasy
 
 
@@ -468,6 +468,142 @@ has-props
 
 78
 
+r1637_scriptdev2.sql
+file
+
+
+
+
+2010-03-08T14:11:35.140625Z
+8121cc9e0194d615e6ddd02552e61de8
+2010-03-08T10:09:58.263542Z
+1637
+nofantasy
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+630
+
+r1567_mangos.sql
+file
+
+
+
+
+2010-03-06T20:22:03.265625Z
+ab34247387f1cefeecce888f17cb8039
+2010-02-05T18:00:27.987642Z
+1567
+deverend
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+87
+
+r1548_scriptdev2.sql
+file
+
+
+
+
+2010-03-06T20:22:03.281250Z
+e0631166b692d0a2eae713ea1b9bfe0a
+2010-01-19T12:13:21.365567Z
+1548
+nofantasy
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+69
+
+r1549_mangos.sql
+file
+
+
+
+
+2010-03-06T20:22:03.281250Z
+f78fd3bad3a11bd30d71ba8b91abf217
+2010-01-19T14:44:52.523304Z
+1549
+nofantasy
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+149
+
 r1629_scriptdev2.sql
 file
 
@@ -536,16 +672,16 @@ has-props
 
 70
 
-r1549_mangos.sql
+r1577_mangos.sql
 file
 
 
 
 
 2010-03-06T20:22:03.281250Z
-f78fd3bad3a11bd30d71ba8b91abf217
-2010-01-19T14:44:52.523304Z
-1549
+52abe68c8833a954ac20dce2bb462341
+2010-02-17T00:45:39.233452Z
+1577
 nofantasy
 has-props
 
@@ -568,75 +704,7 @@ has-props
 
 
 
-149
-
-r1548_scriptdev2.sql
-file
-
-
-
-
-2010-03-06T20:22:03.281250Z
-e0631166b692d0a2eae713ea1b9bfe0a
-2010-01-19T12:13:21.365567Z
-1548
-nofantasy
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-69
-
-r1567_mangos.sql
-file
-
-
-
-
-2010-03-06T20:22:03.265625Z
-ab34247387f1cefeecce888f17cb8039
-2010-02-05T18:00:27.987642Z
-1567
-deverend
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-87
+315
 
 r1595_mangos.sql
 file
@@ -671,40 +739,6 @@ has-props
 
 
 78
-
-r1577_mangos.sql
-file
-
-
-
-
-2010-03-06T20:22:03.281250Z
-52abe68c8833a954ac20dce2bb462341
-2010-02-17T00:45:39.233452Z
-1577
-nofantasy
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-315
 
 r1589_mangos.sql
 file
@@ -808,40 +842,6 @@ has-props
 
 69
 
-r1622_scriptdev2.sql
-file
-
-
-
-
-2010-03-06T20:22:03.296875Z
-ecfeb82f54700b071bd5d6cec8048180
-2010-03-03T18:03:16.533374Z
-1622
-nofantasy
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-230
-
 r1605_mangos.sql
 file
 
@@ -875,6 +875,40 @@ has-props
 
 
 78
+
+r1622_scriptdev2.sql
+file
+
+
+
+
+2010-03-06T20:22:03.296875Z
+ecfeb82f54700b071bd5d6cec8048180
+2010-03-03T18:03:16.533374Z
+1622
+nofantasy
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+230
 
 r1615_mangos.sql
 file
@@ -910,16 +944,16 @@ has-props
 
 78
 
-r1543_scriptdev2.sql
+r1607_mangos.sql
 file
 
 
 
 
 2010-03-06T20:22:03.296875Z
-d24b53d9b88d2115e5d621218afacb3d
-2010-01-10T14:16:42.925554Z
-1543
+af2b84d63c15bbe4e776e54b5e459600
+2010-02-28T00:29:20.635318Z
+1607
 nofantasy
 has-props
 
@@ -942,41 +976,7 @@ has-props
 
 
 
-69
-
-r1544_mangos.sql
-file
-
-
-
-
-2010-03-06T20:22:03.296875Z
-18b0a9248ca7832031442576ce31b761
-2010-01-16T16:34:20.212159Z
-1544
-nofantasy
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-114
+89
 
 r1624_scriptdev2.sql
 file
@@ -1012,16 +1012,16 @@ has-props
 
 305
 
-r1607_mangos.sql
+r1544_mangos.sql
 file
 
 
 
 
 2010-03-06T20:22:03.296875Z
-af2b84d63c15bbe4e776e54b5e459600
-2010-02-28T00:29:20.635318Z
-1607
+18b0a9248ca7832031442576ce31b761
+2010-01-16T16:34:20.212159Z
+1544
 nofantasy
 has-props
 
@@ -1044,7 +1044,41 @@ has-props
 
 
 
-89
+114
+
+r1543_scriptdev2.sql
+file
+
+
+
+
+2010-03-06T20:22:03.296875Z
+d24b53d9b88d2115e5d621218afacb3d
+2010-01-10T14:16:42.925554Z
+1543
+nofantasy
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+69
 
 r1554_mangos.sql
 file
@@ -1642,10 +1676,10 @@ file
 
 
 
-2010-03-08T08:33:30.703125Z
-58af46959a52bd415c94e51269deac4b
-2010-03-07T21:17:07.567804Z
-1636
+2010-03-08T14:11:35.156250Z
+bfcf496cb945c13958312fc35f1a0871
+2010-03-08T10:09:58.263542Z
+1637
 nofantasy
 has-props
 
@@ -1668,7 +1702,7 @@ has-props
 
 
 
-2218
+2243
 
 r1602_mangos.sql
 file

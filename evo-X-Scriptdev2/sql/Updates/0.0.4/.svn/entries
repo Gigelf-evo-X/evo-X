@@ -1,7 +1,7 @@
 10
 
 dir
-1636
+1637
 https://scriptdev2.svn.sourceforge.net/svnroot/scriptdev2/sql/Updates/0.0.4
 https://scriptdev2.svn.sourceforge.net/svnroot/scriptdev2
 
@@ -706,40 +706,6 @@ has-props
 
 75
 
-r1540_mangos.sql
-file
-
-
-
-
-2010-03-06T20:22:03.125000Z
-8392941c610e214bedaf79fa523d472a
-2010-01-10T14:16:42.925554Z
-1543
-nofantasy
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-83
-
 r1503_scriptdev2.sql
 file
 
@@ -773,6 +739,40 @@ has-props
 
 
 69
+
+r1540_mangos.sql
+file
+
+
+
+
+2010-03-06T20:22:03.125000Z
+8392941c610e214bedaf79fa523d472a
+2010-01-10T14:16:42.925554Z
+1543
+nofantasy
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+83
 
 r1513_scriptdev2.sql
 file
@@ -808,40 +808,6 @@ has-props
 
 69
 
-r1542_mangos.sql
-file
-
-
-
-
-2010-03-06T20:22:03.140625Z
-7228aee299ac4895f61ffe20129aedbb
-2010-01-10T14:16:42.925554Z
-1543
-nofantasy
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-84
-
 r1461_mangos.sql
 file
 
@@ -876,14 +842,14 @@ has-props
 
 75
 
-r1470_scriptdev2.sql
+r1542_mangos.sql
 file
 
 
 
 
 2010-03-06T20:22:03.140625Z
-c5ab29f12d1c667de7e2eb6f0f43af3b
+7228aee299ac4895f61ffe20129aedbb
 2010-01-10T14:16:42.925554Z
 1543
 nofantasy
@@ -908,7 +874,7 @@ has-props
 
 
 
-968
+84
 
 r1516_mangos.sql
 file
@@ -944,14 +910,14 @@ has-props
 
 88
 
-r1525_scriptdev2.sql
+r1470_scriptdev2.sql
 file
 
 
 
 
-2010-03-06T20:22:03.156250Z
-23d34f01276d0b5c2e8f8e8b27749733
+2010-03-06T20:22:03.140625Z
+c5ab29f12d1c667de7e2eb6f0f43af3b
 2010-01-10T14:16:42.925554Z
 1543
 nofantasy
@@ -976,7 +942,41 @@ has-props
 
 
 
-1266
+968
+
+r1508_mangos.sql
+file
+
+
+
+
+2010-03-06T20:22:03.156250Z
+d5be5c844ae6fe9ad9be256d5b6bf99f
+2010-01-10T14:16:42.925554Z
+1543
+nofantasy
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+93
 
 r1463_mangos.sql
 file
@@ -1012,14 +1012,14 @@ has-props
 
 190
 
-r1508_mangos.sql
+r1525_scriptdev2.sql
 file
 
 
 
 
 2010-03-06T20:22:03.156250Z
-d5be5c844ae6fe9ad9be256d5b6bf99f
+23d34f01276d0b5c2e8f8e8b27749733
 2010-01-10T14:16:42.925554Z
 1543
 nofantasy
@@ -1044,7 +1044,7 @@ has-props
 
 
 
-93
+1266
 
 r1517_scriptdev2.sql
 file

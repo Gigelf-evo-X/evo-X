@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 37
-/svnroot/scriptdev2/!svn/ver/1636/sql
+/svnroot/scriptdev2/!svn/ver/1637/sql
 END
 Makefile.am
 K 25
@@ -19,7 +19,7 @@ scriptdev2_script_full.sql
 K 25
 svn:wc:ra_dav:version-url
 V 64
-/svnroot/scriptdev2/!svn/ver/1629/sql/scriptdev2_script_full.sql
+/svnroot/scriptdev2/!svn/ver/1637/sql/scriptdev2_script_full.sql
 END
 scriptdev2_create_database.sql
 K 25
