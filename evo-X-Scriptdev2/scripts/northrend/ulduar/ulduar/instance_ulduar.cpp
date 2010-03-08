@@ -1,4 +1,4 @@
-/* Copyright (C) 2006 - 2010 ScriptDev2 <https://scriptdev2.svn.sourceforge.net/>
+/* Copyright (C) 2006 - 2009 ScriptDev2 <https://scriptdev2.svn.sourceforge.net/>
 * This program is free software; you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
 * the Free Software Foundation; either version 2 of the License, or
@@ -24,6 +24,12 @@ EndScriptData */
 #include "precompiled.h"
 #include "ulduar.h"
 
+//Flame leviathan coordinates to summon - its vehicle 
+#define LEVIATHAN_X  458.518
+#define LEVIATHAN_Y  -11.585
+#define LEVIATHAN_Z  409.803
+#define LEVIATHAN_O  3.136
+
 struct MANGOS_DLL_DECL instance_ulduar : public ScriptedInstance
 {
     instance_ulduar(Map* pMap) : ScriptedInstance(pMap) { Initialize(); }
@@ -45,6 +51,16 @@ struct MANGOS_DLL_DECL instance_ulduar : public ScriptedInstance
     uint64 m_uiVezaxGUID;
     uint64 m_uiYoggSaronGUID;
     uint64 m_uiAlgalonGUID;
+    uint64 m_uiRightArmGUID;
+    uint64 m_uiLeftArmGUID;
+    uint64 m_uiKologarnLootGUID;
+    uint64 m_uiKologarnBridgeGUID;
+    uint64 m_uiSentryGUID1;
+    uint64 m_uiSentryGUID2;
+    uint64 m_uiSentryGUID3;
+    uint64 m_uiSentryGUID4;
+    uint64 m_uiFeralDefenderGUID;
+    uint64 m_uiLeviathanGateGUID;
 
     void Initialize()
     {
@@ -61,6 +77,16 @@ struct MANGOS_DLL_DECL instance_ulduar : public ScriptedInstance
         m_uiVezaxGUID           = 0;
         m_uiYoggSaronGUID       = 0;
         m_uiAlgalonGUID         = 0;
+        m_uiRightArmGUID        = 0;
+        m_uiLeftArmGUID         = 0;
+        m_uiKologarnLootGUID    = 0;
+        m_uiKologarnBridgeGUID  = 0;
+        m_uiFeralDefenderGUID   = 0;
+        m_uiSentryGUID1         = 0;
+        m_uiSentryGUID2         = 0;
+        m_uiSentryGUID3         = 0;
+        m_uiSentryGUID4         = 0;
+        m_uiLeviathanGateGUID  = 0;
 
         memset(&m_auiEncounter, 0, sizeof(m_auiEncounter));
         memset(&m_auiAssemblyGUIDs, 0, sizeof(m_auiAssemblyGUIDs));
@@ -108,8 +134,27 @@ struct MANGOS_DLL_DECL instance_ulduar : public ScriptedInstance
             case NPC_KOLOGARN:
                 m_uiKologarnGUID = pCreature->GetGUID();
                 break;
+            case NPC_RIGHT_ARM:
+                m_uiRightArmGUID = pCreature->GetGUID();
+                break;
+            case NPC_LEFT_ARM:
+                m_uiLeftArmGUID = pCreature->GetGUID();
+                break;
             case NPC_AURIAYA:
                 m_uiAuriayaGUID = pCreature->GetGUID();
+                break;
+            case NPC_SANCTUM_SENTRY:
+                if (m_uiSentryGUID1 == 0)
+                    m_uiSentryGUID1 = pCreature->GetGUID();
+                else if (m_uiSentryGUID2 == 0)
+                    m_uiSentryGUID2 = pCreature->GetGUID();
+                    else if (m_uiSentryGUID3 == 0)
+                        m_uiSentryGUID3 = pCreature->GetGUID();
+                    else if (m_uiSentryGUID4 == 0)
+                        m_uiSentryGUID4 = pCreature->GetGUID();
+                break;
+            case NPC_FERAL_DEFENDER:
+                    m_uiFeralDefenderGUID = pCreature->GetGUID();
                 break;
             case NPC_MIMIRON:
                 m_uiMimironGUID = pCreature->GetGUID();
@@ -135,29 +180,81 @@ struct MANGOS_DLL_DECL instance_ulduar : public ScriptedInstance
         }
     }
 
-    /*void OnObjectCreate(GameObject *pGo)
+    void OnObjectCreate(GameObject *pGo)
     {
-    }*/
+        switch(pGo->GetEntry())
+        {
+            case GO_KOLOGARN_BRIDGE:
+                m_uiKologarnBridgeGUID = pGo->GetGUID();
+                pGo->SetGoState(GO_STATE_ACTIVE);
+                break;
+            case GO_KOLOGARN_LOOT:
+                m_uiKologarnLootGUID = pGo->GetGUID();
+                break;
+            case GO_KOLOGARN_LOOT_H:
+                m_uiKologarnLootGUID = pGo->GetGUID();
+                break;
+            case GO_LEVIATHAN_GATE:
+                m_uiLeviathanGateGUID = pGo->GetGUID();
+                //Summon Flame leviathan - its vehicle
+                pGo->SummonVehicle(NPC_LEVIATHAN, LEVIATHAN_X, LEVIATHAN_Y, LEVIATHAN_Z, LEVIATHAN_O);
+                break;
+        }
+    }
 
     void SetData(uint32 uiType, uint32 uiData)
     {
         switch(uiType)
         {
             case TYPE_LEVIATHAN:
+                m_auiEncounter[0] = uiData;
+                break;
             case TYPE_IGNIS:
+                m_auiEncounter[1] = uiData;
+                break;
             case TYPE_RAZORSCALE:
+                m_auiEncounter[2] = uiData;
+                break;
             case TYPE_XT002:
+                m_auiEncounter[3] = uiData;
+                break;
             case TYPE_ASSEMBLY:
+                m_auiEncounter[4] = uiData;
+                break;
             case TYPE_KOLOGARN:
+                m_auiEncounter[5] = uiData;
+                if (uiData == DONE)
+                {
+                    if (GameObject* pChest = instance->GetGameObject(m_uiKologarnLootGUID))
+                        if (pChest && !pChest->isSpawned())
+                            pChest->SetRespawnTime(350000000);
+                    if (GameObject* pBridge = instance->GetGameObject(m_uiKologarnBridgeGUID))
+                        pBridge->SetGoState(GO_STATE_READY);
+                }
+                break;
             case TYPE_AURIAYA:
+                m_auiEncounter[6] = uiData;
+                break;
             case TYPE_MIMIRON:
+                m_auiEncounter[7] = uiData;
+                break;
             case TYPE_HODIR:
+                m_auiEncounter[8] = uiData;
+                break;
             case TYPE_THORIM:
+                m_auiEncounter[9] = uiData;
+                break;
             case TYPE_FREYA:
+                m_auiEncounter[10] = uiData;
+                break;
             case TYPE_VEZAX:
+                m_auiEncounter[11] = uiData;
+                break;
             case TYPE_YOGGSARON:
+                m_auiEncounter[12] = uiData;
+                break;
             case TYPE_ALGALON:
-                m_auiEncounter[uiType] = uiData;
+                m_auiEncounter[13] = uiData;
                 break;
         }
 
@@ -181,31 +278,45 @@ struct MANGOS_DLL_DECL instance_ulduar : public ScriptedInstance
     {
         switch(uiData)
         {
-            case TYPE_LEVIATHAN:
+            case DATA_LEVIATHAN:
                 return m_uiLeviathanGUID;
-            case TYPE_IGNIS:
+            case DATA_IGNIS:
                 return m_uiIgnisGUID;
-            case TYPE_RAZORSCALE:
+            case DATA_RAZORSCALE:
                 return m_uiRazorscaleGUID;
-            case TYPE_XT002:
+            case DATA_XT002:
                 return m_uiXT002GUID;
-            case TYPE_KOLOGARN:
+            case DATA_KOLOGARN:
                 return m_uiKologarnGUID;
-            case TYPE_AURIAYA:
+            case DATA_LEFT_ARM:
+                return m_uiLeftArmGUID;
+            case DATA_RIGHT_ARM:
+                return m_uiRightArmGUID;
+            case DATA_AURIAYA:
                 return m_uiAuriayaGUID;
-            case TYPE_MIMIRON:
+            case DATA_SENTRY_1:
+                return m_uiSentryGUID1;
+            case DATA_SENTRY_2:
+                return m_uiSentryGUID2;
+            case DATA_SENTRY_3:
+                return m_uiSentryGUID3;
+            case DATA_SENTRY_4:
+                return m_uiSentryGUID4;
+            case DATA_FERAL_DEFENDER:
+                return m_uiFeralDefenderGUID;
+            case DATA_MIMIRON:
                 return m_uiMimironGUID;
-            case TYPE_HODIR:
+            case DATA_HODIR:
                 return m_uiMimironGUID;
-            case TYPE_THORIM:
+            case DATA_THORIM:
                 return m_uiThorimGUID;
-            case TYPE_FREYA:
+            case DATA_FREYA:
                 return m_uiFreyaGUID;
-            case TYPE_VEZAX:
+            case DATA_VEZAX:
                 return m_uiVezaxGUID;
-            case TYPE_YOGGSARON:
+            case DATA_YOGGSARON:
                 return m_uiYoggSaronGUID;
-            case TYPE_ALGALON:
+            case DATA_ALGALON:
                 return m_uiAlgalonGUID;
 
             // Assembly of Iron
