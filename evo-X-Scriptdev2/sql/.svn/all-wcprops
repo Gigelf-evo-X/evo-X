@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 37
-/svnroot/scriptdev2/!svn/ver/1632/sql
+/svnroot/scriptdev2/!svn/ver/1636/sql
 END
 Makefile.am
 K 25
@@ -13,7 +13,7 @@ mangos_scriptname_full.sql
 K 25
 svn:wc:ra_dav:version-url
 V 64
-/svnroot/scriptdev2/!svn/ver/1632/sql/mangos_scriptname_full.sql
+/svnroot/scriptdev2/!svn/ver/1636/sql/mangos_scriptname_full.sql
 END
 scriptdev2_script_full.sql
 K 25

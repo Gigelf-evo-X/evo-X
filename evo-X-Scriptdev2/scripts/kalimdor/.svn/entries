@@ -1,7 +1,7 @@
 10
 
 dir
-1635
+1636
 https://scriptdev2.svn.sourceforge.net/svnroot/scriptdev2/scripts/kalimdor
 https://scriptdev2.svn.sourceforge.net/svnroot/scriptdev2
 
@@ -381,40 +381,6 @@ has-props
 
 11640
 
-teldrassil.cpp
-file
-
-
-
-
-2010-03-06T20:19:56.000000Z
-da87ab7b2fd6be68819f697bc7ec1f27
-2010-01-01T23:51:11.692998Z
-1537
-nofantasy
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3218
-
 ashenvale.cpp
 file
 
@@ -449,6 +415,43 @@ has-props
 
 14777
 
+teldrassil.cpp
+file
+
+
+
+
+2010-03-06T20:19:56.000000Z
+da87ab7b2fd6be68819f697bc7ec1f27
+2010-01-01T23:51:11.692998Z
+1537
+nofantasy
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3218
+
+blackfathom_deeps
+dir
+
 mulgore.cpp
 file
 
@@ -482,9 +485,6 @@ has-props
 
 
 6450
-
-blackfathom_deeps
-dir
 
 feralas.cpp
 file
@@ -554,13 +554,16 @@ has-props
 
 6198
 
-dire_maul
+ruins_of_ahnqiraj
 dir
 
 onyxias_lair
 dir
 
-ruins_of_ahnqiraj
+dire_maul
+dir
+
+caverns_of_time
 dir
 
 darkshore.cpp
@@ -596,9 +599,6 @@ has-props
 
 
 13128
-
-caverns_of_time
-dir
 
 stonetalon_mountains.cpp
 file
@@ -668,6 +668,9 @@ has-props
 
 11866
 
+maraudon
+dir
+
 boss_azuregos.cpp
 file
 
@@ -701,9 +704,6 @@ has-props
 
 
 5115
-
-maraudon
-dir
 
 bloodmyst_isle.cpp
 file

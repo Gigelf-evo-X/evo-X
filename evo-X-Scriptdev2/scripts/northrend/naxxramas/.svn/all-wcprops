@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/svnroot/scriptdev2/!svn/ver/1635/scripts/northrend/naxxramas
+/svnroot/scriptdev2/!svn/ver/1636/scripts/northrend/naxxramas
 END
 boss_noth.cpp
 K 25
@@ -15,29 +15,29 @@ svn:wc:ra_dav:version-url
 V 84
 /svnroot/scriptdev2/!svn/ver/1601/scripts/northrend/naxxramas/boss_four_horsemen.cpp
 END
-boss_loatheb.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 78
-/svnroot/scriptdev2/!svn/ver/1624/scripts/northrend/naxxramas/boss_loatheb.cpp
-END
 boss_anubrekhan.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 81
 /svnroot/scriptdev2/!svn/ver/1624/scripts/northrend/naxxramas/boss_anubrekhan.cpp
 END
-boss_faerlina.cpp
+boss_loatheb.cpp
 K 25
 svn:wc:ra_dav:version-url
-V 79
-/svnroot/scriptdev2/!svn/ver/1624/scripts/northrend/naxxramas/boss_faerlina.cpp
+V 78
+/svnroot/scriptdev2/!svn/ver/1624/scripts/northrend/naxxramas/boss_loatheb.cpp
 END
 naxxramas.h
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svnroot/scriptdev2/!svn/ver/1635/scripts/northrend/naxxramas/naxxramas.h
+/svnroot/scriptdev2/!svn/ver/1636/scripts/northrend/naxxramas/naxxramas.h
+END
+boss_faerlina.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/scriptdev2/!svn/ver/1624/scripts/northrend/naxxramas/boss_faerlina.cpp
 END
 boss_gluth.cpp
 K 25
@@ -49,7 +49,7 @@ boss_gothik.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svnroot/scriptdev2/!svn/ver/1635/scripts/northrend/naxxramas/boss_gothik.cpp
+/svnroot/scriptdev2/!svn/ver/1636/scripts/northrend/naxxramas/boss_gothik.cpp
 END
 boss_patchwerk.cpp
 K 25
@@ -57,23 +57,23 @@ svn:wc:ra_dav:version-url
 V 80
 /svnroot/scriptdev2/!svn/ver/1624/scripts/northrend/naxxramas/boss_patchwerk.cpp
 END
-boss_kelthuzad.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 80
-/svnroot/scriptdev2/!svn/ver/1626/scripts/northrend/naxxramas/boss_kelthuzad.cpp
-END
 boss_heigan.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 77
 /svnroot/scriptdev2/!svn/ver/1627/scripts/northrend/naxxramas/boss_heigan.cpp
 END
+boss_kelthuzad.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/scriptdev2/!svn/ver/1626/scripts/northrend/naxxramas/boss_kelthuzad.cpp
+END
 instance_naxxramas.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/scriptdev2/!svn/ver/1635/scripts/northrend/naxxramas/instance_naxxramas.cpp
+/svnroot/scriptdev2/!svn/ver/1636/scripts/northrend/naxxramas/instance_naxxramas.cpp
 END
 boss_maexxna.cpp
 K 25

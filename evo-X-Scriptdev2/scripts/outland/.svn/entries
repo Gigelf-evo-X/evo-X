@@ -1,7 +1,7 @@
 10
 
 dir
-1635
+1636
 https://scriptdev2.svn.sourceforge.net/svnroot/scriptdev2/scripts/outland
 https://scriptdev2.svn.sourceforge.net/svnroot/scriptdev2
 
@@ -29,10 +29,13 @@ nofantasy
 hellfire_citadel
 dir
 
+black_temple
+dir
+
 coilfang_reservoir
 dir
 
-black_temple
+tempest_keep
 dir
 
 terokkar_forest.cpp
@@ -68,9 +71,6 @@ has-props
 
 
 29687
-
-tempest_keep
-dir
 
 gruuls_lair
 dir
@@ -109,40 +109,6 @@ has-props
 
 27024
 
-netherstorm.cpp
-file
-
-
-
-
-2010-03-06T20:20:23.109375Z
-3c7721c3ea86d1dbc9583d904ac4f5fd
-2010-02-19T02:02:25.202153Z
-1585
-nofantasy
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-29087
-
 nagrand.cpp
 file
 
@@ -176,6 +142,40 @@ has-props
 
 
 29558
+
+netherstorm.cpp
+file
+
+
+
+
+2010-03-06T20:20:23.109375Z
+3c7721c3ea86d1dbc9583d904ac4f5fd
+2010-02-19T02:02:25.202153Z
+1585
+nofantasy
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+29087
 
 blades_edge_mountains.cpp
 file
@@ -282,40 +282,6 @@ has-props
 
 5990
 
-shadowmoon_valley.cpp
-file
-
-
-
-
-2010-03-06T20:20:23.125000Z
-81ce8a65c225d08d218207cd59dc7b63
-2010-02-24T17:25:52.394755Z
-1601
-deverend
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-44205
-
 boss_doomwalker.cpp
 file
 
@@ -349,6 +315,40 @@ has-props
 
 
 5605
+
+shadowmoon_valley.cpp
+file
+
+
+
+
+2010-03-06T20:20:23.125000Z
+81ce8a65c225d08d218207cd59dc7b63
+2010-02-24T17:25:52.394755Z
+1601
+deverend
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+44205
 
 shattrath_city.cpp
 file
