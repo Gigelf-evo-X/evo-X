@@ -126,10 +126,10 @@ struct MANGOS_DLL_DECL mob_iron_constructAI : public ScriptedAI
             if (pTemp->isAlive())
                 if (pTemp->HasAura(BUFF_STRENGHT_OF_CREATOR))
                 {
-                    if (pTemp->GetAura(BUFF_STRENGHT_OF_CREATOR, 0)->GetStackAmount() == 1)
+                    if (pTemp->GetAura(BUFF_STRENGHT_OF_CREATOR, EFFECT_INDEX_0)->GetStackAmount() == 1)
                         pTemp->RemoveAurasDueToSpell(BUFF_STRENGHT_OF_CREATOR);
                     else
-                        pTemp->GetAura(BUFF_STRENGHT_OF_CREATOR, 0)->modStackAmount(-1);
+                        pTemp->GetAura(BUFF_STRENGHT_OF_CREATOR, EFFECT_INDEX_0)->modStackAmount(-1);
                 }
     }
 
@@ -153,14 +153,14 @@ struct MANGOS_DLL_DECL mob_iron_constructAI : public ScriptedAI
             m_creature->DealDamage(m_creature, m_creature->GetHealth(), NULL, DIRECT_DAMAGE, SPELL_SCHOOL_MASK_NORMAL, NULL, false);
         }else Death_Timer -= diff;   
 
-        if (m_creature->HasAura(SPELL_BRITTLE,0))
+        if (m_creature->HasAura(SPELL_BRITTLE, EFFECT_INDEX_0))
             brittle = true;
         else
             brittle = false;
 
         if (Aura_Check_Timer < diff)
         {
-            if(Aura* aura = m_creature->GetAura(SPELL_HEAT,0))
+            if(Aura* aura = m_creature->GetAura(SPELL_HEAT, EFFECT_INDEX_0))
                 if(aura->GetStackAmount() > 19)
                 {
                 DoCast(m_creature, SPELL_BRITTLE); //TODO: change
@@ -292,7 +292,7 @@ struct MANGOS_DLL_DECL boss_ignisAI : public ScriptedAI
                 }
             Summon_Timer = 40000;
             if (m_creature->HasAura(BUFF_STRENGHT_OF_CREATOR))
-                    m_creature->GetAura(BUFF_STRENGHT_OF_CREATOR, 0)->modStackAmount(+1);
+                    m_creature->GetAura(BUFF_STRENGHT_OF_CREATOR, EFFECT_INDEX_0)->modStackAmount(+1);
                 else
                     DoCast(m_creature, BUFF_STRENGHT_OF_CREATOR);
         }else Summon_Timer -= diff;

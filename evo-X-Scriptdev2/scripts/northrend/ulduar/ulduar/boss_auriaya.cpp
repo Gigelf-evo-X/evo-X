@@ -183,36 +183,36 @@ struct MANGOS_DLL_DECL mob_sanctum_sentryAI : public ScriptedAI
                 if (pTemp->isAlive())
                     if (pTemp->IsWithinDistInMap(m_creature->getVictim(), 10))
                         if (pTemp->HasAura(SPELL_STRENGHT_OF_PACK))
-                            pTemp->GetAura(SPELL_STRENGHT_OF_PACK, 0)->modStackAmount(+1);
+                            pTemp->GetAura(SPELL_STRENGHT_OF_PACK, EFFECT_INDEX_0)->modStackAmount(+1);
                         else
                             DoCast(m_creature->getVictim(), SPELL_STRENGHT_OF_PACK);
             if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), m_pInstance->GetData64(DATA_SENTRY_2))))
                 if (pTemp->isAlive())
                     if (pTemp->IsWithinDistInMap(m_creature->getVictim(), 10))
                         if (pTemp->HasAura(SPELL_STRENGHT_OF_PACK))
-                            pTemp->GetAura(SPELL_STRENGHT_OF_PACK, 0)->modStackAmount(+1);
+                            pTemp->GetAura(SPELL_STRENGHT_OF_PACK, EFFECT_INDEX_0)->modStackAmount(+1);
                         else
                             DoCast(m_creature->getVictim(), SPELL_STRENGHT_OF_PACK);
             if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), m_pInstance->GetData64(DATA_SENTRY_3))))
                 if (pTemp->isAlive())
                     if (pTemp->IsWithinDistInMap(m_creature->getVictim(), 10))
                         if (pTemp->HasAura(SPELL_STRENGHT_OF_PACK))
-                            pTemp->GetAura(SPELL_STRENGHT_OF_PACK, 0)->modStackAmount(+1);
+                            pTemp->GetAura(SPELL_STRENGHT_OF_PACK, EFFECT_INDEX_0)->modStackAmount(+1);
                         else
                             DoCast(m_creature->getVictim(), SPELL_STRENGHT_OF_PACK);
             if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), m_pInstance->GetData64(DATA_SENTRY_4))))
                 if (pTemp->isAlive())
                     if (pTemp->IsWithinDistInMap(m_creature->getVictim(), 10))
                         if (pTemp->HasAura(SPELL_STRENGHT_OF_PACK))
-                            pTemp->GetAura(SPELL_STRENGHT_OF_PACK, 0)->modStackAmount(+1);
+                            pTemp->GetAura(SPELL_STRENGHT_OF_PACK, EFFECT_INDEX_0)->modStackAmount(+1);
                         else
                             DoCast(m_creature->getVictim(), SPELL_STRENGHT_OF_PACK);
             if (m_creature->HasAura(SPELL_STRENGHT_OF_PACK))
             {
-                if (m_creature->GetAura(SPELL_STRENGHT_OF_PACK, 0)->GetStackAmount() == 1)
+                if (m_creature->GetAura(SPELL_STRENGHT_OF_PACK, EFFECT_INDEX_0)->GetStackAmount() == 1)
                     m_creature->RemoveAurasDueToSpell(SPELL_STRENGHT_OF_PACK);
                 else
-                    m_creature->GetAura(SPELL_STRENGHT_OF_PACK, 0)->modStackAmount(-1);
+                    m_creature->GetAura(SPELL_STRENGHT_OF_PACK, EFFECT_INDEX_0)->modStackAmount(-1);
             }
             Check_Timer = 2100;
         }else Check_Timer -= diff;
@@ -275,10 +275,10 @@ struct MANGOS_DLL_DECL mob_feral_defenderAI : public ScriptedAI
             m_creature->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE);
             if (m_creature->HasAura(SPELL_FERAL_ESSENCE))
             {
-                if (m_creature->GetAura(SPELL_FERAL_ESSENCE, 0)->GetStackAmount() == 1)
+                if (m_creature->GetAura(SPELL_FERAL_ESSENCE, EFFECT_INDEX_0)->GetStackAmount() == 1)
                     m_creature->RemoveAurasDueToSpell(SPELL_FERAL_ESSENCE);
                 else
-                    m_creature->GetAura(SPELL_FERAL_ESSENCE, 0)->modStackAmount(-1);
+                    m_creature->GetAura(SPELL_FERAL_ESSENCE, EFFECT_INDEX_0)->modStackAmount(-1);
                 Revive_Delay = 45000;
                 dead = true;
             }
@@ -338,7 +338,7 @@ struct MANGOS_DLL_DECL mob_feral_defenderAI : public ScriptedAI
         if (stack_delay < diff && !rdy)
         {
             DoCast(m_creature, SPELL_FERAL_ESSENCE);
-            if (m_creature->GetAura(SPELL_FERAL_ESSENCE, 0)->GetStackAmount() == 8)
+            if (m_creature->GetAura(SPELL_FERAL_ESSENCE, EFFECT_INDEX_0)->GetStackAmount() == 8)
                     rdy = true;
             stack_delay = 500;
         }else stack_delay -= diff;

@@ -62,7 +62,7 @@ struct MANGOS_DLL_DECL mob_ulduar_teleporterAI : public ScriptedAI
     {
         if (!m_pInstance)
             return;
-        pPlayer->TeleportTo(603, -706.098022, -92.512573, 430.275574, 6.279854);
+        pPlayer->TeleportTo(603, -706.098022f, -92.512573f, 430.275574f, 6.279854f);
     }
 
     void FormationGrounds(Player* pPlayer)
@@ -70,7 +70,7 @@ struct MANGOS_DLL_DECL mob_ulduar_teleporterAI : public ScriptedAI
         if (!m_pInstance)
             return;
         if(m_pInstance->GetData(TYPE_LEVIATHAN) == FAIL || m_pInstance->GetData(TYPE_LEVIATHAN) == DONE){
-            pPlayer->TeleportTo(603, 131.107910, -35.377659, 410.203522, 6.275923);
+            pPlayer->TeleportTo(603, 131.107910f, -35.377659f, 410.203522f, 6.275923f);
         }else debug_log("SD2: Ulduar - player %s is a moron. he tried to teleport to the formation grounds without engaging the Flame Leviathan", pPlayer->GetName());
     }
 
@@ -79,7 +79,7 @@ struct MANGOS_DLL_DECL mob_ulduar_teleporterAI : public ScriptedAI
         if (!m_pInstance)
             return;
         //if(m_pInstance->GetData(TYPE_LEVIATHAN) == DONE){                IGNORE SINCE NO FLAME LEVIATHAN ENCOUNTER
-            pPlayer->TeleportTo(603, 553.266235, -12.240425, 410.078552, 6.279848);
+            pPlayer->TeleportTo(603, 553.266235f, -12.240425f, 410.078552f, 6.279848f);
         //}else debug_log("SD2: Ulduar - player %s is a moron. he tried to teleport to the colossal forge without defeating the Flame Leviathan", pPlayer->GetName());
     }
 
@@ -88,7 +88,7 @@ struct MANGOS_DLL_DECL mob_ulduar_teleporterAI : public ScriptedAI
         if (!m_pInstance)
             return;
         if(m_pInstance->GetData(TYPE_XT002) == DONE){
-            pPlayer->TeleportTo(603, 1498.145020, -24.150503, 421.366638, 6.275710);
+            pPlayer->TeleportTo(603, 1498.145020f, -24.150503f, 421.366638f, 6.275710f);
         }else debug_log("SD2: Ulduar - player %s is a moron. he tried to teleport to the antechamber of ulduar without defeating XT-002", pPlayer->GetName());
     }
 
@@ -97,7 +97,7 @@ struct MANGOS_DLL_DECL mob_ulduar_teleporterAI : public ScriptedAI
         if (!m_pInstance)
             return;
         if(m_pInstance->GetData(TYPE_KOLOGARN) == DONE){
-            pPlayer->TeleportTo(603, 1859.405396, -24.037266, 449.299652, 6.275713);
+            pPlayer->TeleportTo(603, 1859.405396f, -24.037266f, 449.299652f, 6.275713f);
         }else debug_log("SD2: Ulduar - player %s is a moron. he tried to teleport to the shattered walkway without defeating Kologarn", pPlayer->GetName());
     }
 
@@ -106,7 +106,7 @@ struct MANGOS_DLL_DECL mob_ulduar_teleporterAI : public ScriptedAI
         if (!m_pInstance)
             return;
         if(m_pInstance->GetData(TYPE_AURIAYA) == DONE){
-            pPlayer->TeleportTo(603, 2086.194580, -24.216295, 421.638611, 6.279638);
+            pPlayer->TeleportTo(603, 2086.194580f, -24.216295f, 421.638611f, 6.279638f);
         }else debug_log("SD2: Ulduar - player %s is a moron. he tried to teleport to the conservatory of life without defeating Auriaya", pPlayer->GetName());
     }
 
@@ -115,7 +115,7 @@ struct MANGOS_DLL_DECL mob_ulduar_teleporterAI : public ScriptedAI
         if (!m_pInstance)
             return;
         if(m_pInstance->GetData(TYPE_MIMIRON) == FAIL || m_pInstance->GetData(TYPE_MIMIRON) == DONE){
-            pPlayer->TeleportTo(603, 2517.345459, 2568.905762, 412.698486, 0.000377);
+            pPlayer->TeleportTo(603, 2517.345459f, 2568.905762f, 412.698486f, 0.000377f);
         }else debug_log("SD2: Ulduar - player %s is a moron. he tried to teleport to the spark of imagination without engaging Mimiron", pPlayer->GetName());
     }
 
@@ -124,7 +124,7 @@ struct MANGOS_DLL_DECL mob_ulduar_teleporterAI : public ScriptedAI
         if (!m_pInstance)
             return;
         if(m_pInstance->GetData(TYPE_VEZAX) == DONE){
-            pPlayer->TeleportTo(603, 1854.667480, -11.641102, 334.974670, 4.709239);
+            pPlayer->TeleportTo(603, 1854.667480f, -11.641102f, 334.974670f, 4.709239f);
         }else debug_log("SD2: Ulduar - player %s is a moron. he tried to teleport to the prison of yogg-saron without defeating General Vezax", pPlayer->GetName());
     }
 

@@ -266,11 +266,11 @@ struct MANGOS_DLL_DECL boss_brundirAI : public ScriptedAI
             if (supercharge1)
             {
                 if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), m_pInstance->GetData64(DATA_MOLGEIM))))
-                    if (pTemp->isAlive() && pTemp->HasAura(SPELL_SUPERCHARGE, 0))
-                        pTemp->GetAura(SPELL_SUPERCHARGE, 0)->modStackAmount(+1);
+                    if (pTemp->isAlive() && pTemp->HasAura(SPELL_SUPERCHARGE, EFFECT_INDEX_0))
+                        pTemp->GetAura(SPELL_SUPERCHARGE, EFFECT_INDEX_0)->modStackAmount(+1);
                 if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), m_pInstance->GetData64(DATA_STEELBREAKER))))
-                    if (pTemp->isAlive() && pTemp->HasAura(SPELL_SUPERCHARGE, 0))
-                        pTemp->GetAura(SPELL_SUPERCHARGE, 0)->modStackAmount(+1);
+                    if (pTemp->isAlive() && pTemp->HasAura(SPELL_SUPERCHARGE, EFFECT_INDEX_0))
+                        pTemp->GetAura(SPELL_SUPERCHARGE, EFFECT_INDEX_0)->modStackAmount(+1);
             }else
                 DoCast(m_creature, SPELL_SUPERCHARGE);
             die_delay = 500;
@@ -379,7 +379,7 @@ struct MANGOS_DLL_DECL boss_brundirAI : public ScriptedAI
                     m_creature->AI()->AttackStart(pTarget);
                 }
                 tendrils = true;
-                m_creature->SetSpeedRate(MOVE_RUN, 0.8);
+                m_creature->SetSpeedRate(MOVE_RUN, 0.8f);
                 Tendrils_start_Timer = 3000;
                 Tendrils_end_Timer = 40000;
                 Tendrils_Change = 5000;
@@ -409,7 +409,7 @@ struct MANGOS_DLL_DECL boss_brundirAI : public ScriptedAI
             if (m_creature->HasAura(LIGHTNING_TENDRILS_VISUAL))
                 m_creature->RemoveAurasDueToSpell(LIGHTNING_TENDRILS_VISUAL);
             Tendrils_start_Timer = 90000;
-            m_creature->SetSpeedRate(MOVE_RUN, 1.8);
+            m_creature->SetSpeedRate(MOVE_RUN, 1.8f);
             tendrils = false;
             Chain_Lightning_Timer = 5000;
             Overload_Timer = 35000;
@@ -537,11 +537,11 @@ struct MANGOS_DLL_DECL boss_molgeimAI : public ScriptedAI
             if (supercharge1)
             {
                 if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), m_pInstance->GetData64(DATA_BRUNDIR))))
-                    if (pTemp->isAlive() && pTemp->HasAura(SPELL_SUPERCHARGE, 0))
-                        pTemp->GetAura(SPELL_SUPERCHARGE, 0)->modStackAmount(+1);
+                    if (pTemp->isAlive() && pTemp->HasAura(SPELL_SUPERCHARGE, EFFECT_INDEX_0))
+                        pTemp->GetAura(SPELL_SUPERCHARGE, EFFECT_INDEX_0)->modStackAmount(+1);
                 if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), m_pInstance->GetData64(DATA_STEELBREAKER))))
-                    if (pTemp->isAlive() && pTemp->HasAura(SPELL_SUPERCHARGE, 0))
-                        pTemp->GetAura(SPELL_SUPERCHARGE, 0)->modStackAmount(+1);
+                    if (pTemp->isAlive() && pTemp->HasAura(SPELL_SUPERCHARGE, EFFECT_INDEX_0))
+                        pTemp->GetAura(SPELL_SUPERCHARGE, EFFECT_INDEX_0)->modStackAmount(+1);
             }else
                 DoCast(m_creature, SPELL_SUPERCHARGE);
             die_delay = 500;
@@ -793,11 +793,11 @@ struct MANGOS_DLL_DECL boss_steelbreakerAI : public ScriptedAI
             if (supercharge1)
             {
                 if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), m_pInstance->GetData64(DATA_MOLGEIM))))
-                    if (pTemp->isAlive() && pTemp->HasAura(SPELL_SUPERCHARGE, 0))
-                        pTemp->GetAura(SPELL_SUPERCHARGE, 0)->modStackAmount(+1);
+                    if (pTemp->isAlive() && pTemp->HasAura(SPELL_SUPERCHARGE, EFFECT_INDEX_0))
+                        pTemp->GetAura(SPELL_SUPERCHARGE, EFFECT_INDEX_0)->modStackAmount(+1);
                 if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), m_pInstance->GetData64(DATA_BRUNDIR))))
-                    if (pTemp->isAlive() && pTemp->HasAura(SPELL_SUPERCHARGE, 0))
-                        pTemp->GetAura(SPELL_SUPERCHARGE, 0)->modStackAmount(+1);
+                    if (pTemp->isAlive() && pTemp->HasAura(SPELL_SUPERCHARGE, EFFECT_INDEX_0))
+                        pTemp->GetAura(SPELL_SUPERCHARGE, EFFECT_INDEX_0)->modStackAmount(+1);
             }else
                 DoCast(m_creature, SPELL_SUPERCHARGE);
             die_delay = 500;
