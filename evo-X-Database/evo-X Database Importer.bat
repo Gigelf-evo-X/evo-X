@@ -22,7 +22,7 @@ Set port=3306
 CLS
 ECHO.
 ECHO [Import] Batching evo-X Database Rev. 0.0.1 please wait...
-mysql -h %server% --user=%user% --password=%pass% --port=%port% %wdb% < world.sql
+mysql -h %server% --user=%user% --password=%pass% --port=%port% %wdb% < Database/world.sql
 ECHO [Import] Installation Complete.
 ECHO.
 PAUSE
