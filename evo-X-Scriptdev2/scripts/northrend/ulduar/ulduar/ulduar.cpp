@@ -28,6 +28,8 @@ EndContentData */
 
 #include "precompiled.h"
 #include "ulduar.h"
+#include "escort_ai.h"
+
 
 #define GOSSIP_BASE_CAMP     "Expedition Base Camp"
 #define GOSSIP_FORMATION_GROUNDS     "Formation Grounds"
@@ -213,6 +215,79 @@ bool GOHello_go_ulduar_teleporter(Player* pPlayer, GameObject* pGo)
     return false;
 }
 
+/*######
+## npc_lore_keeper_of_norgannon_ulduar
+######*/
+
+#define GOSSIP_ITEM_START               "Sekunder Defense Systems Enable."
+#define GOSSIP_ITEM_PROGRESS            "Confirmed."
+
+enum
+{
+TEXT_ID_START                       = 14375,
+TEXT_ID_PROGRESS                    = 14496,
+};
+
+struct MANGOS_DLL_DECL npc_lore_keeper_of_norgannon_ulduarAI : public npc_escortAI
+{
+    npc_lore_keeper_of_norgannon_ulduarAI(Creature* pCreature) : npc_escortAI(pCreature)
+    {
+        m_pInstance = (ScriptedInstance*)pCreature->GetInstanceData();
+        Reset();
+    }
+
+        ScriptedInstance* m_pInstance;
+
+        uint32 m_uiStep;
+        uint32 m_uiPhase_timer;
+
+    void Reset()
+    {
+        m_uiStep = 0;
+		m_uiPhase_timer = 0;
+    }
+
+    void WaypointReached(uint32 uiPointId)
+    {
+    }
+
+    void JustRespawned()
+    {
+    }
+
+    void JumpToNextStep(uint32 uiTimer)
+    {
+        m_uiPhase_timer = uiTimer;
+        m_uiStep++;
+    }
+};
+
+bool GossipHello_npc_lore_keeper_of_norgannon_ulduar(Player* pPlayer, Creature* pCreature)
+{
+
+    pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, GOSSIP_ITEM_START, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF+1);
+    pPlayer->SEND_GOSSIP_MENU(TEXT_ID_START , pCreature->GetGUID());
+    return true;
+}
+
+bool GossipSelect_npc_lore_keeper_of_norgannon_ulduar(Player* pPlayer, Creature* pCreature, uint32 uiSender, uint32 uiAction)
+{
+    if (uiAction == GOSSIP_ACTION_INFO_DEF+1)
+    {
+        {
+                pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, GOSSIP_ITEM_PROGRESS, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF+2);
+                pPlayer->SEND_GOSSIP_MENU(TEXT_ID_PROGRESS, pCreature->GetGUID());
+        }
+    }
+
+    return true;
+}
+
+CreatureAI* GetAI_npc_lore_keeper_of_norgannon_ulduar(Creature* pCreature)
+{
+    return new npc_lore_keeper_of_norgannon_ulduarAI(pCreature);
+}
+
 void AddSC_ulduar()
 {
     Script* NewScript;
@@ -227,5 +302,12 @@ void AddSC_ulduar()
     NewScript = new Script;
     NewScript->Name = "go_ulduar_teleporter";
     NewScript->pGOHello = &GOHello_go_ulduar_teleporter;
+    NewScript->RegisterSelf();
+
+    NewScript = new Script;
+    NewScript->Name = "npc_lore_keeper_of_norgannon_ulduar";
+    NewScript->GetAI = &GetAI_npc_lore_keeper_of_norgannon_ulduar;
+    NewScript->pGossipHello = &GossipHello_npc_lore_keeper_of_norgannon_ulduar;
+    NewScript->pGossipSelect = &GossipSelect_npc_lore_keeper_of_norgannon_ulduar;
     NewScript->RegisterSelf();
 }
