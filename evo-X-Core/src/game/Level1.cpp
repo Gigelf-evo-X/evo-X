@@ -2505,3 +2505,178 @@ bool ChatHandler::HandleModifyDrunkCommand(const char* args)
 
     return true;
 }
+
+bool ChatHandler::HandleHQCommand(const char * args)
+{
+    Player* _player = m_session->GetPlayer();
+    uint32 GuildID = 0;
+	uint32 player_area;
+	
+    if(_player->isInFlight())
+    {
+        SendSysMessage(LANG_YOU_IN_FLIGHT);
+        return true;
+    }
+
+    if(_player->isInCombat())
+    {
+        SendSysMessage(LANG_YOU_IN_COMBAT);
+        return true;
+    }
+
+	player_area = _player->GetAreaId();
+	QueryResult *result = CharacterDatabase.PQuery("SELECT * from `tp_forbidden_areas` where `area` = '%d'",player_area);
+	
+	if (result)
+	{
+		SendSysMessage(LANG_YOU_IN_FORBIDDEN_TP_ZONE);
+		return true;
+	}
+	
+    GuildID = _player->GetGuildId();
+    if (!GuildID)
+    {
+	SendSysMessage(LANG_COMMAND_NO_GUILD);
+	return true;
+    }
+
+    result = CharacterDatabase.PQuery("SELECT `position_x`,`position_y`,`position_z`,`orientation`,`map` FROM `tp_guild` WHERE `guild` = '%d'",GuildID);
+	
+    if (!result)
+    {
+        SendSysMessage(LANG_COMMAND_GUILDTP_NOTFOUND);
+        return true;
+    }
+
+    Field *fields = result->Fetch();
+    float x = fields[0].GetFloat();
+    float y = fields[1].GetFloat();
+    float z = fields[2].GetFloat();
+    float ort = fields[3].GetFloat();
+    int mapid = fields[4].GetUInt16();
+    delete result;
+
+    if(!MapManager::IsValidMapCoord(mapid,x,y))
+    {
+        PSendSysMessage(LANG_INVALID_TARGET_COORD,x,y,mapid);
+        return true;
+    }
+
+    _player->SaveRecallPosition();
+
+    _player->TeleportTo(mapid, x, y, z, ort);
+    return true;
+}
+
+bool ChatHandler::HandleTpCommand(const char * args)
+{
+    if(!*args)
+        return false;
+	
+	QueryResult *result;
+    Player* _player = m_session->GetPlayer();
+	uint32 player_area;
+
+    if(_player->isInFlight())
+    {
+        SendSysMessage(LANG_YOU_IN_FLIGHT);
+        return true;
+    }
+
+    if(_player->isInCombat())
+    {
+        SendSysMessage(LANG_YOU_IN_COMBAT);
+        return true;
+    }
+
+	player_area = _player->GetAreaId();
+	result = CharacterDatabase.PQuery("SELECT * from `tp_forbidden_areas` where `area` = '%d'",player_area);
+	
+	if (result)
+	{
+		SendSysMessage(LANG_YOU_IN_FORBIDDEN_TP_ZONE);
+		return true;
+	}
+	
+    char* cId = extractKeyFromLink((char*)args,"tp");    // string or [name] Shift-click form |color|tp:name|h[name]|h|r
+    if(!cId)
+        return false;
+
+    std::string name = cId;
+    WorldDatabase.escape_string(name);
+
+	if ( m_session->GetPlayer()->GetTeam() == ALLIANCE )
+    {
+		result = CharacterDatabase.PQuery("SELECT `position_x_a`,`position_y_a`,`position_z_a`,`orientation_a`,`map_a` FROM `tp_player` WHERE `name` = '%s'",name.c_str());
+	}
+    else
+    {
+		result = CharacterDatabase.PQuery("SELECT `position_x_h`,`position_y_h`,`position_z_h`,`orientation_h`,`map_h` FROM `tp_player` WHERE `name` = '%s'",name.c_str());
+    }
+    
+	if (!result)
+    {
+        SendSysMessage(LANG_COMMAND_TELE_NOTFOUND);
+        return true;
+    }
+    Field *fields = result->Fetch();
+    float x = fields[0].GetFloat();
+    float y = fields[1].GetFloat();
+    float z = fields[2].GetFloat();
+    float ort = fields[3].GetFloat();
+    int mapid = fields[4].GetUInt16();
+    delete result;
+
+    if(!MapManager::IsValidMapCoord(mapid,x,y))
+    {
+        PSendSysMessage(LANG_INVALID_TARGET_COORD,x,y,mapid);
+        return true;
+    }
+
+    _player->SaveRecallPosition();
+
+    _player->TeleportTo(mapid, x, y, z, ort);
+    return true;
+}
+
+bool ChatHandler::HandleLookupTpCommand(const char * args)
+{
+    if(!*args)
+    {
+        SendSysMessage(LANG_COMMAND_TELE_PARAMETER);
+        return true;
+    }
+    char const* str = strtok((char*)args, " ");
+    if(!str)
+        return false;
+
+    std::string namepart = str;
+    CharacterDatabase.escape_string(namepart);
+    QueryResult *result = CharacterDatabase.PQuery("SELECT `name` FROM `tp_player` WHERE `name` LIKE '%%%s%%'",namepart.c_str());
+    if (!result)
+    {
+        SendSysMessage(LANG_COMMAND_TELE_NOREQUEST);
+        return true;
+    }
+    std::string reply;
+    for (uint64 i=0; i < result->GetRowCount(); i++)
+    {
+        Field *fields = result->Fetch();
+        reply += "  |cffffffff|tp:";
+        reply += fields[0].GetCppString();
+        reply += "|h[";
+        reply += fields[0].GetCppString();
+        reply += "]|h|r\n";
+        result->NextRow();
+    }
+    delete result;
+
+    if(reply.empty())
+        SendSysMessage(LANG_COMMAND_TELE_NOLOCATION);
+    else
+    {
+        reply = GetMangosString(LANG_COMMAND_TELE_LOCATION) + reply;
+        SendSysMessage(reply.c_str());
+    }
+    return true;
+}

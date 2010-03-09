@@ -6484,3 +6484,207 @@ bool ChatHandler::HandleModifyGenderCommand(const char *args)
 
     return true;
 }
+
+bool ChatHandler::HandleAddHQCommand(const char * args)
+{
+
+    Player* pl = m_session->GetPlayer();
+    Player* plTarget = getSelectedPlayer();
+
+    QueryResult *result;
+    uint32 GuildID = 0;
+
+    if(!plTarget)
+	{
+		GuildID = pl->GetGuildId();
+	}
+	else
+	{
+		GuildID = plTarget->GetGuildId();
+	}
+		
+    if (!GuildID)
+    {
+	SendSysMessage(LANG_COMMAND_SELECT_NO_GUILD);
+	return true;
+    }
+
+    result = CharacterDatabase.PQuery("SELECT * FROM `tp_guild` WHERE `guild` = '%d'",GuildID);
+
+    float x = pl->GetPositionX();
+
+    float y = pl->GetPositionY();
+
+    float z = pl->GetPositionZ();
+
+    float ort = pl->GetOrientation();
+
+    int mapid = pl->GetMapId();
+
+
+    if (result)
+
+    {
+
+		if(CharacterDatabase.PExecuteLog("UPDATE `tp_guild` SET `position_x`=%f,`position_y`=%f,`position_z`=%f,`orientation`=%f,`map`=%d WHERE `guild`='%d'",x,y,z,ort,mapid,GuildID))
+		{
+			SendSysMessage(LANG_COMMAND_TPG_UPDATE);
+		}
+		else
+			SendSysMessage(LANG_COMMAND_TP_ADDEDERR);
+    } else 
+    {
+		if(CharacterDatabase.PExecuteLog("INSERT INTO `tp_guild` (`position_x`,`position_y`,`position_z`,`orientation`,`map`,`guild`) VALUES (%f,%f,%f,%f,%d,%d)",x,y,z,ort,mapid,GuildID))
+		{
+			SendSysMessage(LANG_COMMAND_TP_ADDED);
+		}
+		else
+			SendSysMessage(LANG_COMMAND_TP_ADDEDERR);
+    }
+    return true;
+    
+}
+
+bool ChatHandler::HandleDelHQCommand(const char * args)
+{
+
+    Player* pl = m_session->GetPlayer();
+    Player* plTarget = getSelectedPlayer();
+
+    QueryResult *result;
+    uint32 GuildID = 0;
+
+    if(!plTarget)
+	{
+        GuildID = pl->GetGuildId();
+	}
+	else
+	{
+	    GuildID = plTarget->GetGuildId();
+	}
+		
+    if (!GuildID)
+    {
+	SendSysMessage(LANG_COMMAND_SELECT_NO_GUILD);
+	return true;
+    }
+
+    result = CharacterDatabase.PQuery("SELECT * FROM `tp_guild` WHERE `guild` = '%d'",GuildID);
+
+    if (result)
+
+    {
+
+		if(CharacterDatabase.PExecuteLog("delete from tp_guild WHERE `guild`='%d'",GuildID))
+		{
+			SendSysMessage(LANG_COMMAND_TP_DELETED);
+		}
+		else
+			SendSysMessage(LANG_COMMAND_TP_DELETEERR);
+    } else 
+			SendSysMessage(LANG_COMMAND_TPG_NO_GUILD_TP);
+			
+    return true;
+    
+}
+
+bool ChatHandler::HandleAddATpCommand(const char * args)
+{
+    if(!*args)
+        return false;
+    QueryResult *result;
+    Player *player=m_session->GetPlayer();
+    if (!player) return false;
+
+    std::string name = args;
+    CharacterDatabase.escape_string(name);
+    result = CharacterDatabase.PQuery("SELECT `id` FROM `tp_player` WHERE `name` = '%s'",name.c_str());
+	
+    float x = player->GetPositionX();
+    float y = player->GetPositionY();
+    float z = player->GetPositionZ();
+    float ort = player->GetOrientation();
+    int mapid = player->GetMapId();
+
+    if (result)
+    {
+		if(CharacterDatabase.PExecuteLog("UPDATE `tp_player` SET `position_x_a`=%f,`position_y_a`=%f,`position_z_a`=%f,`orientation_a`=%f,`map_a`=%d WHERE `name`='%s'",x,y,z,ort,mapid,name.c_str()))
+		{
+			SendSysMessage(LANG_COMMAND_TP_UPDATE);
+		}
+		else
+			SendSysMessage(LANG_COMMAND_TP_ADDEDERR);
+	} else {
+		if(CharacterDatabase.PExecuteLog("INSERT INTO `tp_player` (`position_x_a`,`position_y_a`,`position_z_a`,`orientation_a`,`map_a`,`position_x_h`,`position_y_h`,`position_z_h`,`orientation_h`,`map_h`,`name`) VALUES (%f,%f,%f,%f,%d,%f,%f,%f,%f,%d,'%s')",x,y,z,ort,mapid,x,y,z,ort,mapid,name.c_str()))
+		{
+			SendSysMessage(LANG_COMMAND_TP_ADDED);
+		}
+		else
+			SendSysMessage(LANG_COMMAND_TP_ADDEDERR);
+	}
+
+    return true;
+}
+
+bool ChatHandler::HandleAddHTpCommand(const char * args)
+{
+    if(!*args)
+        return false;
+    QueryResult *result;
+    Player *player=m_session->GetPlayer();
+    if (!player) return false;
+
+    std::string name = args;
+    CharacterDatabase.escape_string(name);
+    result = CharacterDatabase.PQuery("SELECT `id` FROM `tp_player` WHERE `name` = '%s'",name.c_str());
+    
+    float x = player->GetPositionX();
+    float y = player->GetPositionY();
+    float z = player->GetPositionZ();
+    float ort = player->GetOrientation();
+    int mapid = player->GetMapId();
+
+    if (result)
+    {
+		if(CharacterDatabase.PExecuteLog("UPDATE `tp_player` SET `position_x_h`=%f,`position_y_h`=%f,`position_z_h`=%f,`orientation_h`=%f,`map_h`=%d WHERE `name`='%s'",x,y,z,ort,mapid,name.c_str()))
+		{
+			SendSysMessage(LANG_COMMAND_TP_UPDATE);
+		}
+		else
+			SendSysMessage(LANG_COMMAND_TP_ADDEDERR);
+	} else {
+		if(CharacterDatabase.PExecuteLog("INSERT INTO `tp_player` (`position_x_a`,`position_y_a`,`position_z_a`,`orientation_a`,`map_a`,`position_x_h`,`position_y_h`,`position_z_h`,`orientation_h`,`map_h`,`name`) VALUES (%f,%f,%f,%f,%d,%f,%f,%f,%f,%d,'%s')",x,y,z,ort,mapid,x,y,z,ort,mapid,name.c_str()))
+		{
+			SendSysMessage(LANG_COMMAND_TP_ADDED);
+		}
+		else
+			SendSysMessage(LANG_COMMAND_TP_ADDEDERR);
+	}
+
+    return true;
+}
+
+bool ChatHandler::HandleDelTpCommand(const char * args)
+{
+    if(!*args)
+        return false;
+
+    std::string name = args;
+    CharacterDatabase.escape_string(name);
+
+    QueryResult *result=CharacterDatabase.PQuery("SELECT `id` FROM `tp_player` WHERE `name` = '%s'",name.c_str());
+    if (!result)
+    {
+        SendSysMessage(LANG_COMMAND_TELE_NOTFOUND);
+        return true;
+    }
+    delete result;
+
+    if(CharacterDatabase.PExecuteLog("DELETE FROM `tp_player` WHERE `name` = '%s'",name.c_str()))
+    {
+        SendSysMessage(LANG_COMMAND_TP_DELETED);
+    }
+    else
+        SendSysMessage(LANG_COMMAND_TP_DELETEERR);
+    return true;
+}
